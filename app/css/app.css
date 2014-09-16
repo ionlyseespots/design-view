@@ -1,0 +1,177 @@
+
+html {overflow-y:scroll; }
+
+section {position: relative;}
+
+
+
+
+
+
+.panel-heading {
+    padding: 0
+}
+
+.panel-title {
+    padding: 10px 15px;
+}
+
+.container-fluid {
+    margin-bottom: 20px;
+}
+
+
+
+
+.container-phone {
+    border: 1px solid #d6d6d6;
+}
+
+label {font-size: 11px;}
+
+.container-phone {
+    background-color:#F0F0F0;
+    border: 5px solid #fff;
+    border-top: 75px solid #fff;
+    margin: 0 ;
+    border-bottom: 75px solid #fff;
+    border-radius: 45px;
+    -webkit-box-shadow: 0px 1px 12px 1px rgba(0,0,0,0.35);
+    -moz-box-shadow: 0px 1px 12px 1px rgba(0,0,0,0.35);
+    box-shadow: 0px 1px 12px 1px rgba(0,0,0,0.35);
+
+
+}
+
+.container-simple {overflow-x: hidden;}
+.simple-view div {position: relative;}
+
+.container-phone:after {
+    content: "";
+    display: block;
+    width: 75px;
+    height: 0;
+    border:5px solid #999;
+    border-radius: 25px;
+    position: absolute;
+    top: -30px;
+    left: 38%;
+    z-index: 1;
+}
+
+.container-phone:before {
+    content: "";
+    display: block;
+    width: 5px;
+    height: 0;
+    border:5px solid #888;
+    border-radius: 25px;
+    position: absolute;
+    top: -50px;
+    left: 48%;
+    z-index: 1;
+}
+
+.container-simple {
+    overflow-y: scroll;
+    height: 550px;
+    width: 320px;
+    border-top: 1px solid #F0F0F0;
+    border-bottom: 1px solid #F0F0F0;
+    border-left: 1px solid #F0F0F0;
+}
+
+.container-simple-well {border: none;}
+
+
+.container-simple .navbar {
+    border: none;
+}
+
+.container-simple .navbar-simple-border {
+    border: 1px solid;
+    clear: both;
+    overflow: hidden;
+}
+
+.container-simple .buttons-simple-border {
+    border-radius: 4px;
+    border: 1px solid;
+    margin: 5px 0;
+}
+
+.container-simple .btn .highlight {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+
+.container-simple .btn {
+    margin: 0;
+    padding: 15px 0;
+    border: none;
+}
+
+.container-simple .btn > div {
+    padding: 15px 0;
+}
+
+.container-simple .dropdown-mega {
+    border-color: #fff;
+}
+
+.form-simple {
+    padding: 0 5px;
+}
+
+.form-simple small {font-size: 10px;}
+
+.form-simple .buttons {
+    margin-top: 5px;
+}
+
+.form-simple input {
+    color: #777;
+    width: 100%;
+}
+
+.form-simple h3 {
+    margin: 10px 0;
+}
+
+.form-simple .row {
+    padding: 10px;
+}
+
+.form-simple .row label {
+    margin-top: 15px;
+}
+
+
+.form-simple .well {
+    border: 1px solid #d6d6d6;
+    background-color: transparent;
+    margin: 10px;
+}
+
+.form-simple .col-sm-6 {
+    margin-top: 5px;
+}
+
+.form-simple .input-group {}
+
+/* simple jumbotron is inheriting a border radius somewhere in compiled LESS */
+.jumbotron {
+    border-radius: 0 !important;
+}
+
+/* bug in compiled LESS with colorpicker */
+.dropdown {
+    position: absolute !important;
+}
+
+
+/* mine */
