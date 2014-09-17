@@ -1,63 +1,75 @@
-<section class="col-md-3 col-xs-4 col-collapse" style="border-right: 1px solid rgba(0, 0, 0, 0.1); bottom: 0; left: 0; position: fixed; top: 0;">
-    <form>
-        <div class="form-simple">
-            <div style=" border-bottom: 1px solid rgba(0, 0, 0, 0.1); height: 160px; left: 0; padding: 10px;position: absolute; right: 0; top: 0;">
-                <h4 class="text-center">view</h4>
 
+<section class="container-fluid clearfix col-collapse">
+
+            <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+                <ul class="nav navbar-nav navbar-left">
+                    <li>
+                      <a href="">HTML + Bootstrap Theme Template Editor</a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <button class="btn btn-default" ng-click="goFullscreen()"><i class="fa fa-expand"></i></button>
+                    </li>
+                </ul>
+            </div>
+
+        <div class="row" style="margin-top: 75px;">
+            <div class="col-sm-6">
+                <p>A live template editor built with <a href="https://angularjs.org/">AngularJS</a>
+                <h1>Branding</h1>
+                <h2>Select a template</h2>
+                <button class="btn btn-default" ng-click="gome()">left column</button>
+                <button class="btn btn-default" ng-click="goyou()">right column</button>
+                <button class="btn btn-default" ng-click="gous()">3 equal columns</button>
+                <br /><br />
+
+                <div ng-repeat="design in designviewdiv">
+                    <label>
+                        <!--{{color.name}}-->
+                        Left Column Content
+                    </label><br />
+                    <textarea type="text" ng-model="design.hello"></textarea>
+                </div>
+
+                <div ng-show="visible3">
+                    visible 3 columns
+                </div>
+                <div ng-show="visibler" ng-repeat="design in designviewdiv">
+                    <label>
+                        <!--{{color.name}}-->
+                        Content
+                    </label><br />
+                    <textarea type="text" ng-model="design.hello"></textarea>
+                </div>
 
             </div>
-            <div style="bottom: 253px;  left: 0; overflow-x: hidden;overflow-y: scroll; padding: 10px; position: absolute;  right: 0; top: 160px;">
+            <div class="col-sm-6">
+
+                <h1>Generated Preview</h1>
+                <span ng-bind-html="templatefile"></span>
 
             </div>
-            <div style=" border-top: 1px solid rgba(0, 0, 0, 0.1); background-color:#fff; bottom: 0;height: 253px;left: 0; position: absolute; right: 0;">
-                <div class="well clearfix" style="background-color: #fff;">
-                    <p class="text-info">Generated</p>
+        </div>
+        <hr />
+
+        <div class="row">
+            <div class="col-sm-6">
+        <h1>Live</h1>
+                <div ng-repeat="design in designviewdiv">
+                {{design.hello}}
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <h1>Generated HTML</h1>
+                <div class="well" ng-show="templatefile">
+                    <p class="alert-info alert text-center">
+                        File Override
+                    </p>
+                    <code style="white-space: pre-wrap;white-space: -moz-pre-wrap !important;  white-space: -pre-wrap; white-space: -o-pre-wrap; word-wrap: break-word;">{{templatefile}}</code>
 
                 </div>
             </div>
         </div>
-    </form>
-</section>
-<section class="container-simple-editor clearfix col-md-9 col-xs-8 col-collapse col-md-offset-3 col-xs-offset-4">
-    <div class="container">
-        <div class="navbar navbar-default navbar-fixed-top col-md-9 col-collapse col-md-offset-3 col-xs-8 col-xs-offset-4" role="navigation">
-            <ul class="nav navbar-nav navbar-left">
-                <li>
-                  <a href="">NGHTML</a>
-                </li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <button class="btn btn-default" ng-click="goFullscreen()"><i class="fa fa-expand"></i></button>
-                </li>
-            </ul>
-        </div>
-    </div>
-    <div class="container-fluid" style="margin-top: 75px;">
-        <p>A live view editor built with <a href="https://angularjs.org/">AngularJS</a>
-        <div ng-repeat="design in designviewdiv">
-            <label>
-                {{color.name}}
-            </label>
 
-                <textarea type="text" ng-model="design.hello"></textarea>
-
-
-        </div>
-            <hr />
-            <button class="btn btn-default" ng-click="gome()">left column</button>
-            <button class="btn btn-default" ng-click="goyou()">right column</button>
-            <button class="btn btn-default" ng-click="gous()">3 equal columns</button>
-    </div>
-    <div class="container-fluid simple-view" style="margin: 15px 0;">
-        <div col-xs-7"></div>
-        <div class="col-xs-5">
-            <div class="well" ng-show="templatefile">
-                <p class="alert-info alert text-center">
-                    Generated File Override HTML
-                </p>
-                <code style="white-space: pre-wrap;white-space: -moz-pre-wrap !important;  white-space: -pre-wrap; white-space: -o-pre-wrap; word-wrap: break-word;">{{templatefile}}</code>
-            </div>
-        </div>
-    </div>
 </section>
