@@ -23,8 +23,12 @@
                 <button class="btn btn-default" ng-click="goyou()">right column</button>
                 <button class="btn btn-default" ng-click="gous()">3 equal columns</button>
                 <br /><br />
-
                 <div ng-repeat="design in designviewdiv">
+                <div ng-model="design.hello" ta-toolbar="[['h1','h2','h3','p','bold','italics','ul', 'ol','justifyLeft','justifyCenter','justifyRight','indent','outdent','insertImage','insertLink'],['html','clear']]" text-angular="">
+</div>
+                </div>
+
+                <div ng-show="visible1" ng-repeat="design in designviewdiv">
                     <label>
                         <!--{{color.name}}-->
                         Left Column Content
@@ -32,10 +36,17 @@
                     <textarea type="text" ng-model="design.hello"></textarea>
                 </div>
 
-                <div ng-show="visible3">
-                    visible 3 columns
+                <div ng-show="visible2" ng-repeat="design in designviewdiv">
+                    <label>
+                        <!--{{color.name}}-->
+                        right Column Content
+                    </label><br />
+                    <textarea type="text" ng-model="design.hello"></textarea>
                 </div>
-                <div ng-show="visibler" ng-repeat="design in designviewdiv">
+                <div ng-show="visible3" ng-repeat="design in designviewdivus">
+                    <div >
+                        visible 3 columns
+                    </div>
                     <label>
                         <!--{{color.name}}-->
                         Content

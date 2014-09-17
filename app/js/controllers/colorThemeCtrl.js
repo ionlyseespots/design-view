@@ -1,11 +1,13 @@
 Simple.app.controller("colorThemeCtrl", function($scope){
-
+    $scope.visible1 = false;
+    $scope.visible2 = false;
+    $scope.visible3 = false;
     //== Data
     $scope.designviewdiv = [
         {
             "tag":              "div",
             "class":            "text-info",
-            "hello":            "text area text",
+            "hello":            "",
             "children": [
             {
                 "tag":          "span",
@@ -58,8 +60,7 @@ Simple.app.controller("colorThemeCtrl", function($scope){
             ]}
     ];
 
-
-
+    $scope.content = '';
 
     //** Format JSON to HTML
     function format(d){
@@ -77,19 +78,21 @@ Simple.app.controller("colorThemeCtrl", function($scope){
     }
 
     $scope.gome = function() {
+        $scope.visible1 = !$scope.visible1;
         $scope.templatefile = "";
         format($scope.designviewdiv);
         console.log($scope.templatefile);
     };
     $scope.goyou = function() {
+        $scope.visible2 = !$scope.visible2;
         $scope.templatefile = "";
         format($scope.designviewdivyou);
         console.log($scope.templatefile);
     };
     $scope.gous = function() {
+        $scope.visible3 = !$scope.visible3;
         $scope.templatefile = "";
         format($scope.designviewdivus);
         console.log($scope.templatefile);
     };
 });
-
