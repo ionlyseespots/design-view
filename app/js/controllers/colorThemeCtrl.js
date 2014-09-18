@@ -6,7 +6,7 @@ Simple.app.controller("colorThemeCtrl", function($scope){
     $scope.designviewdiv = [
         {
             "tag":              "div",
-            "class":            "text-info",
+            "class":            "col-xs-12",
             "hello":            "",
             "children": [
             {
@@ -18,20 +18,30 @@ Simple.app.controller("colorThemeCtrl", function($scope){
     $scope.designviewdivyou = [
         {
             "tag":              "div",
-            "class":            "pull-right",
-            "hello":            "text area text",
+            "class":            "col-sm-6",
+            "hello":            "Left Side",
             "children": [
                 {
                     "tag":          "span",
                     "html":         "prexisitingText: {newText}"
                 }
-            ]}
+            ]},
+        {
+            "tag":              "div",
+            "class":            "col-sm-6",
+            "hello":            "Right Side",
+            "children": [
+                {
+                    "tag":          "span",
+                    "html":         "prexisitingText: {newText}"
+                }
+            ]},
     ];
     $scope.designviewdivus = [
         {
             "tag":              "div",
             "class":            "col-sm-4",
-            "hello":            "text area text",
+            "hello":            "Left side",
             "children": [
                 {
                     "tag":          "span",
@@ -41,7 +51,7 @@ Simple.app.controller("colorThemeCtrl", function($scope){
         {
             "tag":              "div",
             "class":            "col-sm-4",
-            "hello":            "text area text",
+            "hello":            "Center",
             "children": [
                 {
                     "tag":          "span",
@@ -51,7 +61,7 @@ Simple.app.controller("colorThemeCtrl", function($scope){
         {
             "tag":              "div",
             "class":            "col-sm-4",
-            "hello":            "text area text",
+            "hello":            "Right Side",
             "children": [
                 {
                     "tag":          "span",
@@ -78,19 +88,25 @@ Simple.app.controller("colorThemeCtrl", function($scope){
     }
 
     $scope.gome = function() {
-        $scope.visible1 = !$scope.visible1;
+        $scope.visible1 = true;
+        $scope.visible2 = false;
+        $scope.visible3 = false;
         $scope.templatefile = "";
         format($scope.designviewdiv);
         console.log($scope.templatefile);
     };
     $scope.goyou = function() {
-        $scope.visible2 = !$scope.visible2;
+        $scope.visible1 = false;
+        $scope.visible2 = true;
+        $scope.visible3 = false;
         $scope.templatefile = "";
         format($scope.designviewdivyou);
         console.log($scope.templatefile);
     };
     $scope.gous = function() {
-        $scope.visible3 = !$scope.visible3;
+        $scope.visible1 = false;
+        $scope.visible2 = false;
+        $scope.visible3 = true;
         $scope.templatefile = "";
         format($scope.designviewdivus);
         console.log($scope.templatefile);

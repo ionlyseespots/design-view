@@ -4,7 +4,7 @@
             <div class="navbar navbar-default navbar-fixed-top" role="navigation">
                 <ul class="nav navbar-nav navbar-left">
                     <li>
-                      <a href="">HTML + Bootstrap Theme Template Editor</a>
+                        <a href="https://angularjs.org/">A live template editor built with AngularJS</a></span>
                     </li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
@@ -14,65 +14,54 @@
                 </ul>
             </div>
 
-        <div class="row" style="margin-top: 75px;">
+        <div class="container-fluid" style="margin-top: 75px;">
             <div class="col-sm-6">
-                <p>A live template editor built with <a href="https://angularjs.org/">AngularJS</a>
-                <h1>Branding</h1>
-                <h2>Select a template - Only Left column is aligned with textangular right now</h2>
-                <h2>To generate preview: click selected template a second time</h2>
-                <button class="btn btn-default" ng-click="gome()">left column</button>
-                <button class="btn btn-default" ng-click="goyou()">right column</button>
-                <button class="btn btn-default" ng-click="gous()">3 equal columns</button>
+
+                <h1>Branded Content</h1>
+                <h2>Select a Responsive template</h2>
+                <button class="btn btn-default" ng-click="gome()">Create New</button>
+                <button class="btn btn-default" ng-click="goyou()">2-columns</button>
+                <button class="btn btn-default" ng-click="gous()">3-columns</button>
                 <br /><br />
-                <div ng-repeat="design in designviewdiv">
-                <div ng-model="design.hello" ta-toolbar="[['h1','h2','h3','p','bold','italics','ul', 'ol','justifyLeft','justifyCenter','justifyRight','indent','outdent','insertImage','insertLink'],['html','clear']]" text-angular="">
+                <div ng-show="visible1" ng-repeat="design in designviewdiv">
+                <div ng-model="design.hello" ta-toolbar="[['h1','h2','h3','p','bold','italics','ul', 'ol','justifyLeft','justifyCenter','justifyRight','insertImage','insertLink'],['html','clear']]" text-angular="">
 </div>
                 </div>
 
-                <div ng-show="visible1" ng-repeat="design in designviewdiv">
-                    <label>
-                        <!--{{color.name}}-->
-                        Left Column Content
-                    </label><br />
-                    <textarea type="text" ng-model="design.hello"></textarea>
+
+                <div ng-show="visible2"  ng-repeat="design in designviewdivyou">
+                    <div ng-model="design.hello" ta-toolbar="[['h1','h2','h3','p','bold','italics','ul', 'ol','justifyLeft','justifyCenter','justifyRight','insertImage','insertLink'],['html','clear']]" text-angular="">
+                    </div>
                 </div>
 
-                <div ng-show="visible2" ng-repeat="design in designviewdiv">
-                    <label>
-                        <!--{{color.name}}-->
-                        right Column Content
-                    </label><br />
-                    <textarea type="text" ng-model="design.hello"></textarea>
-                </div>
+
                 <div ng-show="visible3" ng-repeat="design in designviewdivus">
-                    <div >
-                        visible 3 columns
+                    <div ng-model="design.hello" ta-toolbar="[['h1','h2','h3','p','bold','italics','ul', 'ol','justifyLeft','justifyCenter','justifyRight','insertImage','insertLink'],['html','clear']]" text-angular="">
                     </div>
-                    <label>
-                        <!--{{color.name}}-->
-                        Content
-                    </label><br />
-                    <textarea type="text" ng-model="design.hello"></textarea>
                 </div>
+
+
+
+
+
+
 
             </div>
             <div class="col-sm-6">
 
-                <h1>Generated Preview</h1>
+                <button ng-show="visible1" class="btn btn-default" ng-click="gome()">Preview</button>
+                <button ng-show="visible2" class="btn btn-default" ng-click="goyou()">Preview</button>
+                <button ng-show="visible3" class="btn btn-default" ng-click="gous()">Preview</button>
+                <hr />
                 <span ng-bind-html="templatefile"></span>
 
             </div>
         </div>
         <hr />
 
-        <div class="row">
-            <div class="col-sm-6">
-        <h1>Live</h1>
-                <div ng-repeat="design in designviewdiv">
-                {{design.hello}}
-                </div>
-            </div>
-            <div class="col-sm-6">
+
+
+            <div class="container-fluid">
                 <h1>Generated HTML</h1>
                 <div class="well" ng-show="templatefile">
                     <p class="alert-info alert text-center">
@@ -82,6 +71,6 @@
 
                 </div>
             </div>
-        </div>
+
 
 </section>
