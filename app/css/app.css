@@ -173,6 +173,7 @@ label {font-size: 11px;}
     position: absolute !important;
 }
 
-
+/* tabs */
+.nav-tabs {border-bottom: none;}
 /* textAngular */
 .ta-root .btn-group:last-of-type {float: right;}

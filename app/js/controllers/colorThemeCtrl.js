@@ -20,6 +20,7 @@ Simple.app.controller("colorThemeCtrl", function($scope){
             "tag":              "div",
             "class":            "col-sm-6",
             "hello":            "Left Side",
+            "title":            "Left",
             "children": [
                 {
                     "tag":          "span",
@@ -30,6 +31,7 @@ Simple.app.controller("colorThemeCtrl", function($scope){
             "tag":              "div",
             "class":            "col-sm-6",
             "hello":            "Right Side",
+            "title":            "Right",
             "children": [
                 {
                     "tag":          "span",
@@ -42,6 +44,7 @@ Simple.app.controller("colorThemeCtrl", function($scope){
             "tag":              "div",
             "class":            "col-sm-4",
             "hello":            "Left side",
+            "title":            "Left",
             "children": [
                 {
                     "tag":          "span",
@@ -52,6 +55,7 @@ Simple.app.controller("colorThemeCtrl", function($scope){
             "tag":              "div",
             "class":            "col-sm-4",
             "hello":            "Center",
+            "title":            "Center",
             "children": [
                 {
                     "tag":          "span",
@@ -62,6 +66,8 @@ Simple.app.controller("colorThemeCtrl", function($scope){
             "tag":              "div",
             "class":            "col-sm-4",
             "hello":            "Right Side",
+            "title":            "Right",
+
             "children": [
                 {
                     "tag":          "span",
