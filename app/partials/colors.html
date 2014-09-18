@@ -23,14 +23,14 @@
                 <button class="btn btn-default" ng-click="gous()">3-columns</button>
                 <br /><br />
                 <div ng-show="visible1" ng-repeat="design in designviewdiv">
-                <div ng-model="design.hello" ta-toolbar="[['h1','h2','h3','p','bold','italics','ul', 'ol','insertImage','insertLink'],['html','clear']]" text-angular="">
+                <div ng-model="design.hello" ta-toolbar="[['h1','h2','h3','p','bold','italics','ul', 'ol','insertImage','insertLink','html','clear']]" text-angular="">
                 </div>
         </div>
 
                 <div ng-show="visible2">
                     <tabset>
                         <tab heading="{{design.title}}" ng-repeat="design in designviewdivyou">
-                        <div ng-model="design.hello" ta-toolbar="[['h1','h2','h3','p','bold','italics','ul', 'ol','insertImage','insertLink'],['html','clear']]" text-angular="">
+                        <div ng-model="design.hello" ta-toolbar="[['h1','h2','h3','p','bold','italics','ul', 'ol','insertImage','insertLink','html','clear']]" text-angular="">
                         </div></tab>
                     </tabset>
                 </div>
@@ -39,7 +39,7 @@
                 <div ng-show="visible3">
                     <tabset>
                         <tab heading="{{design.title}}" ng-repeat="design in designviewdivus">
-                            <div ng-model="design.hello" ta-toolbar="[['h1','h2','h3','p','bold','italics','ul', 'ol','insertImage','insertLink'],['html','clear']]" text-angular="">
+                            <div ng-model="design.hello" ta-toolbar="[['h1','h2','h3','p','bold','italics','ul', 'ol','insertImage','insertLink','html','clear']]" text-angular="">
                             </div>
                         </tab>
                     </tabset>
