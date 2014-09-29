@@ -1,88 +1,59 @@
-
 <section class="container-fluid clearfix col-collapse">
-
-            <div class="navbar navbar-default navbar-fixed-top" role="navigation">
-                <ul class="nav navbar-nav navbar-left">
-                    <li>
-                        <a href="https://angularjs.org/">A live template editor built with AngularJS</a></span>
-                    </li>
-                </ul>
-                <ul class="nav navbar-nav navbar-right">
-                    <li>
-                        <button class="btn btn-default" ng-click="goFullscreen()"><i class="fa fa-expand"></i></button>
-                    </li>
-                </ul>
-            </div>
-
-        <div class="container-fluid" style="margin-top: 75px;">
-
-
-                <h1>Branded content area</h1>
-                <button class="btn btn-default" ng-click="gome()">Create New</button>
-                <button class="btn btn-default" ng-click="goyou()">2-columns</button>
-                <button class="btn btn-default" ng-click="gous()">3-columns</button>
-                <br /><br />
-                <div ng-show="visible1" ng-repeat="design in designviewdiv">
-                <div ng-model="design.hello" ta-toolbar="[['h1','h2','h3','p','bold','italics','ul', 'ol','insertImage','insertLink','html','clear']]" text-angular="">
-                </div>
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <ul class="nav navbar-nav navbar-left">
+            <li>
+                <a href="https://angularjs.org/">A live template editor built with AngularJS</a></span>
+            </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li>
+                <button class="btn btn-default" ng-click="goFullscreen()"><i class="fa fa-expand"></i></button>
+            </li>
+        </ul>
+    </div>
+    <div class="container-fluid" style="margin-top: 75px;">
+        <h1>
+            Branded content area
+        </h1>
+        <button class="btn btn-default" ng-click="gome()">Create New</button>
+        <button class="btn btn-default" ng-click="goyou()">2-columns</button>
+        <button class="btn btn-default" ng-click="gous()">3-columns</button>
+        <br />
+        <br />
+        <div ng-show="visible1" ng-repeat="design in designviewdiv">
+            <div ng-model="design.hello" ta-toolbar="[['h1','h2','h3','p','bold','italics','ul', 'ol','insertImage','insertLink','html','clear']]" text-angular=""></div>
         </div>
-
-                <div ng-show="visible2">
-                    <tabset>
-                        <tab heading="{{design.title}}" ng-repeat="design in designviewdivyou">
-                        <div ng-model="design.hello" ta-toolbar="[['h1','h2','h3','p','bold','italics','ul', 'ol','insertImage','insertLink','html','clear']]" text-angular="">
-                        </div></tab>
-                    </tabset>
-                </div>
-
-
-                <div ng-show="visible3">
-                    <tabset>
-                        <tab heading="{{design.title}}" ng-repeat="design in designviewdivus">
-                            <div ng-model="design.hello" ta-toolbar="[['h1','h2','h3','p','bold','italics','ul', 'ol','insertImage','insertLink','html','clear']]" text-angular="">
-                            </div>
-                        </tab>
-                    </tabset>
-
-
-                </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
+        <div ng-show="visible2">
+            <tabset>
+                <tab heading="{{design.title}}" ng-repeat="design in designviewdivyou">
+                    <div ng-model="design.hello" ta-toolbar="[['h1','h2','h3','p','bold','italics','ul', 'ol','insertImage','insertLink','html','clear']]" text-angular=""></div>
+                </tab>
+            </tabset>
         </div>
-
+        <div ng-show="visible3">
+            <tabset>
+                <tab heading="{{design.title}}" ng-repeat="design in designviewdivus">
+                    <div ng-model="design.hello" ta-toolbar="[['h1','h2','h3','p','bold','italics','ul', 'ol','insertImage','insertLink','html','clear']]" text-angular=""></div>
+                </tab>
+            </tabset>
+        </div>
+    </div>
     <div class="container-fluid">
         <button ng-show="visible1" class="btn btn-default" ng-click="gome()">Preview</button>
         <button ng-show="visible2" class="btn btn-default" ng-click="goyou()">Preview</button>
         <button ng-show="visible3" class="btn btn-default" ng-click="gous()">Preview</button>
-
         <div class="container-fluid" style="border: 1px solid #d6d6d6;padding: 25px; margin: 25px 0;" ng-show="templatefile" ng-bind-html="templatefile"></div>
     </div>
-        <hr />
-
-
-
-            <div class="container-fluid">
-
-                <div class="well" ng-show="templatefile">
-                    <h1>Generated HTML</h1>
-                    <p class="alert-info alert text-center">
-                        File Override
-                    </p>
-                    <code style="white-space: pre-wrap;white-space: -moz-pre-wrap !important;  white-space: -pre-wrap; white-space: -o-pre-wrap; word-wrap: break-word;">{{templatefile}}</code>
-
-                </div>
-            </div>
-
-
+    <hr />
+    <div class="container-fluid">
+        <div class="well" ng-show="templatefile">
+            <h1>
+                Generated HTML
+            </h1>
+            <p class="alert-info alert text-center">
+                File Override
+            </p>
+            <code style="white-space: pre-wrap;white-space: -moz-pre-wrap !important;  white-space: -pre-wrap; white-space: -o-pre-wrap; word-wrap: break-word;">{{templatefile}}</code>
+        </div>
+    </div>
 </section>
