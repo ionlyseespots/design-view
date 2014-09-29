@@ -76,6 +76,47 @@ Simple.app.controller("colorThemeCtrl", function($scope){
             ]}
     ];
 
+    $scope.data = [
+        {
+            "class":                "col-xs-1"
+        },
+        {
+            "class": "col-xs-2"
+        },
+        {
+            "class":                "col-xs-3"
+        },
+        {
+            "class":                "col-xs-4"
+        },
+        {
+            "class":                "col-xs-5"
+        },
+        {
+            "class":                "col-xs-6"
+        },
+        {
+            "class":                "col-xs-7"
+        },
+        {
+            "class":                "col-xs-8"        },
+        {
+
+            "class":                "col-xs-9"
+        },
+        {
+            "class":               "col-xs-10"
+        },
+        {
+            "class":               "col-xs-11"
+        },
+        {
+            "class":               "col-xs-12"
+        }
+    ];
+
+
+
     $scope.content = '';
 
     //** Format JSON to HTML
@@ -91,6 +132,7 @@ Simple.app.controller("colorThemeCtrl", function($scope){
             $scope.templatefile += tagopen + ' class="' + c + '">' + designinner + tagclose + '\n' + ' \r';
 
         });
+
     }
 
     $scope.gome = function() {
@@ -116,5 +158,21 @@ Simple.app.controller("colorThemeCtrl", function($scope){
         $scope.templatefile = "";
         format($scope.designviewdivus);
         console.log($scope.templatefile);
+    };
+
+    $scope.addcolumncount = function() {
+
+
+    };
+    $scope.subtractcolumncount = function() {
+
+    };
+    //http://stackoverflow.com/questions/20439439/on-click-how-can-i-cycle-through-json-one-by-one-in-angularjs
+    $scope.current = 0;
+    $scope.Next = function() {
+        $scope.current = ($scope.current + 1) % $scope.data.length;
+    };
+    $scope.Prev = function() {
+        $scope.current = ($scope.current - 1) % $scope.data.length;
     };
 });

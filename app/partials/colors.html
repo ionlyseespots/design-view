@@ -2,7 +2,7 @@
     <div class="navbar navbar-default navbar-fixed-top" role="navigation">
         <ul class="nav navbar-nav navbar-left">
             <li>
-                <a href="https://angularjs.org/">A live template editor built with AngularJS</a></span>
+                <a href="https://angularjs.org/">A live HTML template editor built with AngularJS</a></span>
             </li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
@@ -12,12 +12,15 @@
         </ul>
     </div>
     <div class="container-fluid" style="margin-top: 75px;">
+        <p>
+            Plugins: <a href="http://textangular.com/">Text Angular</a> <a href="https://github.com/fabiobiondi/angular-fullscreen">Fullscreen</a>
+        </p>
         <h1>
             Branded content area
         </h1>
         <button class="btn btn-default" ng-click="gome()">Create New</button>
-        <button class="btn btn-default" ng-click="goyou()">2-columns</button>
-        <button class="btn btn-default" ng-click="gous()">3-columns</button>
+        <button class="btn btn-default" ng-click="goyou()">2-column Theme</button>
+        <button class="btn btn-default" ng-click="gous()">3-column Theme</button>
         <br />
         <br />
         <div ng-show="visible1" ng-repeat="design in designviewdiv">
@@ -27,6 +30,17 @@
             <tabset>
                 <tab heading="{{design.title}}" ng-repeat="design in designviewdivyou">
                     <div ng-model="design.hello" ta-toolbar="[['h1','h2','h3','p','bold','italics','ul', 'ol','insertImage','insertLink','html','clear']]" text-angular=""></div>
+                    <!--<p>Edit the responsive design template width for the {{design.title}}.</p>-->
+                    <!--<button class="btn btn-default" ng-click="Next();">+</button>-->
+                    <!--<button class="btn btn-default" ng-click="Prev{}">-</button>-->
+                    <!--- experiment with live display--->
+                    <!--<div class="container-fluid">-->
+                        <!--<div>-->
+                            <!--<div>-->
+                                <!--{{design.class}}    {{data[current].class}}-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
                 </tab>
             </tabset>
         </div>
@@ -42,11 +56,12 @@
         <button ng-show="visible1" class="btn btn-default" ng-click="gome()">Preview</button>
         <button ng-show="visible2" class="btn btn-default" ng-click="goyou()">Preview</button>
         <button ng-show="visible3" class="btn btn-default" ng-click="gous()">Preview</button>
-        <div class="container-fluid" style="border: 1px solid #d6d6d6;padding: 25px; margin: 25px 0;" ng-show="templatefile" ng-bind-html="templatefile"></div>
+        <button ng-show="visible1 || visible2 || visible3" class="btn btn-default" ng-click="showhtml = !showhtml">Toggle Generated HTML</button>
+        <div class="container-fluid" style="margin: 25px 0;" ng-show="templatefile" ng-bind-html="templatefile"></div>
     </div>
     <hr />
     <div class="container-fluid">
-        <div class="well" ng-show="templatefile">
+        <div class="well" ng-show="showhtml">
             <h1>
                 Generated HTML
             </h1>
