@@ -18,15 +18,10 @@ Simple.app.controller("colorThemeCtrl", function($scope){
     $scope.designviewdivyou = [
         {
             "tag":              "div",
-            "class":            "col-sm-6",
             "hello":            "Left Side",
             "title":            "Left",
-            "children": [
-                {
-                    "tag":          "span",
-                    "html":         "prexisitingText: {newText}"
-                }
-            ]},
+            "class":            "col-sm-6"
+        },
         {
             "tag":              "div",
             "class":            "col-sm-6",
@@ -81,7 +76,7 @@ Simple.app.controller("colorThemeCtrl", function($scope){
             "class":                "col-xs-1"
         },
         {
-            "class": "col-xs-2"
+            "class":                "col-xs-2"
         },
         {
             "class":                "col-xs-3"
@@ -115,6 +110,25 @@ Simple.app.controller("colorThemeCtrl", function($scope){
         }
     ];
 
+    $scope.designviewdefault = [
+        {
+            "tag":              "div",
+            "hello":            "Left Side",
+            "title":            "Left",
+            "class":            "col-sm-6"
+        },
+        {
+            "tag":              "div",
+            "class":            "col-sm-6",
+            "hello":            "Right Side",
+            "title":            "Right",
+            "children": [
+                {
+                    "tag":          "span",
+                    "html":         "prexisitingText: {newText}"
+                }
+            ]},
+    ];
 
 
     $scope.content = '';
@@ -130,23 +144,24 @@ Simple.app.controller("colorThemeCtrl", function($scope){
             var designinner = i.hello;
             var tagclose = '</' + i.tag + '>';
             $scope.templatefile += tagopen + ' class="' + c + '">' + designinner + tagclose + '\n' + ' \r';
-
         });
-
     }
 
     $scope.gome = function() {
         $scope.visible1 = true;
         $scope.visible2 = false;
         $scope.visible3 = false;
+        $scope.visible4 = false;
         $scope.templatefile = "";
         format($scope.designviewdiv);
         console.log($scope.templatefile);
+
     };
     $scope.goyou = function() {
         $scope.visible1 = false;
         $scope.visible2 = true;
         $scope.visible3 = false;
+        $scope.visible4 = false;
         $scope.templatefile = "";
         format($scope.designviewdivyou);
         console.log($scope.templatefile);
@@ -155,13 +170,30 @@ Simple.app.controller("colorThemeCtrl", function($scope){
         $scope.visible1 = false;
         $scope.visible2 = false;
         $scope.visible3 = true;
+        $scope.visibled4 = false;
         $scope.templatefile = "";
         format($scope.designviewdivus);
         console.log($scope.templatefile);
     };
 
-    $scope.addcolumncount = function() {
+    $scope.gothem = function() {
+        $scope.visible1 = false;
+        $scope.visible2 = false;
+        $scope.visible3 = false;
+        $scope.visible4 = true;
+        $scope.templatefile = "";
+        format($scope.designviewdefault);
 
+        var opencontainer = '<section class="jumbotron container-fluid">' + '\n';
+        var closecontainer = '</section>';
+
+        $scope.templatefile = opencontainer + $scope.templatefile + closecontainer;
+
+        console.log($scope.templatefile);
+    };
+
+    // stuff, I want to add/subract class names in array at some point
+    $scope.addcolumncount = function() {
 
     };
     $scope.subtractcolumncount = function() {
@@ -169,10 +201,10 @@ Simple.app.controller("colorThemeCtrl", function($scope){
     };
     //http://stackoverflow.com/questions/20439439/on-click-how-can-i-cycle-through-json-one-by-one-in-angularjs
     $scope.current = 0;
-    $scope.Next = function() {
+    $scope.NextGo = function() {
         $scope.current = ($scope.current + 1) % $scope.data.length;
     };
-    $scope.Prev = function() {
+    $scope.PrevGo = function() {
         $scope.current = ($scope.current - 1) % $scope.data.length;
     };
 });

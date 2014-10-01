@@ -16,34 +16,51 @@
             Plugins: <a href="http://textangular.com/">Text Angular</a> <a href="https://github.com/fabiobiondi/angular-fullscreen">Fullscreen</a>
         </p>
         <h1>
-            Branded content area
+            Home Page Theme
         </h1>
-        <button class="btn btn-default" ng-click="gome()">Create New</button>
+        <button class="btn btn-default" ng-click="firstpaneisopen=!firstpaneisopen;">Custom</button>
+        <button class="btn btn-default" ng-click="gothem();">Edit Default</button>
+
+        <div ng-show="firstpaneisopen">
+        <button class="btn btn-default" ng-click="gome()">1-column</button>
         <button class="btn btn-default" ng-click="goyou()">2-column Theme</button>
         <button class="btn btn-default" ng-click="gous()">3-column Theme</button>
+        </div>
+
         <br />
         <br />
+        <div ng-show="visible4">
+            <tabset>
+                <tab heading="{{design.title}}" ng-repeat="design in designviewdefault">
+                    <div ng-model="design.hello" ta-toolbar="[['h1','h2','h3','p','bold','italics','ul', 'ol','insertImage','insertLink','html','clear']]" text-angular=""></div>
+                </tab>
+            </tabset>
+        </div>
+
         <div ng-show="visible1" ng-repeat="design in designviewdiv">
             <div ng-model="design.hello" ta-toolbar="[['h1','h2','h3','p','bold','italics','ul', 'ol','insertImage','insertLink','html','clear']]" text-angular=""></div>
         </div>
+
         <div ng-show="visible2">
             <tabset>
                 <tab heading="{{design.title}}" ng-repeat="design in designviewdivyou">
                     <div ng-model="design.hello" ta-toolbar="[['h1','h2','h3','p','bold','italics','ul', 'ol','insertImage','insertLink','html','clear']]" text-angular=""></div>
-                    <!--<p>Edit the responsive design template width for the {{design.title}}.</p>-->
-                    <!--<button class="btn btn-default" ng-click="Next();">+</button>-->
-                    <!--<button class="btn btn-default" ng-click="Prev{}">-</button>-->
-                    <!--- experiment with live display--->
-                    <!--<div class="container-fluid">-->
-                        <!--<div>-->
-                            <!--<div>-->
-                                <!--{{design.class}}    {{data[current].class}}-->
-                            <!--</div>-->
-                        <!--</div>-->
-                    <!--</div>-->
+                    <p>Edit the responsive design template width for the {{design.title}}.</p>
+                    <button class="btn btn-default" ng-click="NextGo(design.class = data[current].class)">+</button>
+                    <button class="btn btn-default" ng-click="PrevGo{design.class = data[current].class}">-</button>
+                    - experiment with editable bootstrap-
+                    <div class="container-fluid">
+                        <div>
+                            <div ng-class="{{design.class}}">
+                                <!--{{design.class}}-->
+                                {{data[current].class}}
+                            </div>
+                        </div>
+                    </div>
                 </tab>
             </tabset>
         </div>
+
         <div ng-show="visible3">
             <tabset>
                 <tab heading="{{design.title}}" ng-repeat="design in designviewdivus">
@@ -52,11 +69,13 @@
             </tabset>
         </div>
     </div>
+
     <div class="container-fluid">
         <button ng-show="visible1" class="btn btn-default" ng-click="gome()">Preview</button>
         <button ng-show="visible2" class="btn btn-default" ng-click="goyou()">Preview</button>
         <button ng-show="visible3" class="btn btn-default" ng-click="gous()">Preview</button>
-        <button ng-show="visible1 || visible2 || visible3" class="btn btn-default" ng-click="showhtml = !showhtml">Toggle Generated HTML</button>
+        <button ng-show="visible4" class="btn btn-default" ng-click="gothem()">Preview default</button>
+        <button ng-show="visible1 || visible2 || visible3 || visible4" class="btn btn-default" ng-click="showhtml = !showhtml">Toggle Generated HTML</button>
         <div class="container-fluid" style="margin: 25px 0;" ng-show="templatefile" ng-bind-html="templatefile"></div>
     </div>
     <hr />
