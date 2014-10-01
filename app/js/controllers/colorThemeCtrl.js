@@ -193,8 +193,8 @@ Simple.app.controller("colorThemeCtrl", function($scope){
         $scope.visibled4 = false;
         $scope.visible5 = true;
         $scope.cssfile = "";
-        format($scope.designviewimage);
-        console.log($scope.cssfile);
+
+
     };
 
     $scope.gothem = function() {
