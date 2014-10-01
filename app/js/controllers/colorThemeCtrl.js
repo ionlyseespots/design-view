@@ -130,6 +130,16 @@ Simple.app.controller("colorThemeCtrl", function($scope){
             ]},
     ];
 
+
+    $scope.designviewimage = [
+        {
+            "tag":              "div",
+            "hello":            '<img src="http://www.four51.com/images/company/c5a12ff8ea8f4cb0aaf8dc662ea7085e.png"/>',
+            "title":            "Left",
+            "class":            "col-sm-6"
+        },
+    ];
+
     $scope.content = '';
 
     //** Format JSON to HTML
@@ -174,6 +184,17 @@ Simple.app.controller("colorThemeCtrl", function($scope){
         $scope.templatefile = "";
         format($scope.designviewdivus);
         console.log($scope.templatefile);
+    };
+
+    $scope.goimage = function() {
+        $scope.visible1 = false;
+        $scope.visible2 = false;
+        $scope.visible3 = false;
+        $scope.visibled4 = false;
+        $scope.visible5 = true;
+        $scope.cssfile = "";
+        format($scope.designviewimage);
+        console.log($scope.cssfile);
     };
 
     $scope.gothem = function() {
