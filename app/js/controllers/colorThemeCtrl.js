@@ -113,14 +113,14 @@ Simple.app.controller("colorThemeCtrl", function($scope){
     $scope.designviewdefault = [
         {
             "tag":              "div",
-            "hello":            "Left Side",
+            "hello":            '<img src="http://www.four51.com/images/company/c5a12ff8ea8f4cb0aaf8dc662ea7085e.png"/>',
             "title":            "Left",
             "class":            "col-sm-6"
         },
         {
             "tag":              "div",
             "class":            "col-sm-6",
-            "hello":            "Right Side",
+            "hello":            "<h2>Company Name</h2>",
             "title":            "Right",
             "children": [
                 {
@@ -129,7 +129,6 @@ Simple.app.controller("colorThemeCtrl", function($scope){
                 }
             ]},
     ];
-
 
     $scope.content = '';
 
@@ -141,6 +140,7 @@ Simple.app.controller("colorThemeCtrl", function($scope){
             var c = i.class;
             var pe = i.children;
             var el = i.html;
+            var logo = i.logo;
             var designinner = i.hello;
             var tagclose = '</' + i.tag + '>';
             $scope.templatefile += tagopen + ' class="' + c + '">' + designinner + tagclose + '\n' + ' \r';

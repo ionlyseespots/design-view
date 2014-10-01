@@ -16,10 +16,20 @@
             Plugins: <a href="http://textangular.com/">Text Angular</a> <a href="https://github.com/fabiobiondi/angular-fullscreen">Fullscreen</a>
         </p>
         <h1>
-            Home Page Theme
+          Theme
         </h1>
-        <button class="btn btn-default" ng-click="firstpaneisopen=!firstpaneisopen;">Custom</button>
-        <button class="btn btn-default" ng-click="gothem();">Edit Default</button>
+        <h2>Edit Home Page</h2>
+
+        <div class="well row">
+            <div class="col-sm-3"><a href="">Select Theme 1 thumbnail</a></div>
+            <div class="col-sm-3"><a href="">Select Theme 2 thumbnail</a></div>
+            <div class="col-sm-3"><a href="">Select 3 thumbnail</a></div>
+            <div class="col-sm-3"><a href="">Select 4 thumbnail</a></div>
+
+
+        </div>
+        <button class="btn btn-default" ng-click="firstpaneisopen=!firstpaneisopen; visible4=false; showhtml=false;">Create New Theme</button>
+        <button class="btn btn-default" ng-click="gothem();">Edit Default Theme</button>
 
         <div ng-show="firstpaneisopen">
         <button class="btn btn-default" ng-click="gome()">1-column</button>
@@ -45,18 +55,18 @@
             <tabset>
                 <tab heading="{{design.title}}" ng-repeat="design in designviewdivyou">
                     <div ng-model="design.hello" ta-toolbar="[['h1','h2','h3','p','bold','italics','ul', 'ol','insertImage','insertLink','html','clear']]" text-angular=""></div>
-                    <p>Edit the responsive design template width for the {{design.title}}.</p>
-                    <button class="btn btn-default" ng-click="NextGo(design.class = data[current].class)">+</button>
-                    <button class="btn btn-default" ng-click="PrevGo{design.class = data[current].class}">-</button>
-                    - experiment with editable bootstrap-
-                    <div class="container-fluid">
-                        <div>
-                            <div ng-class="{{design.class}}">
-                                <!--{{design.class}}-->
-                                {{data[current].class}}
-                            </div>
-                        </div>
-                    </div>
+                    <!--<p>Edit the responsive design template width for the {{design.title}}.</p>-->
+                    <!--<button class="btn btn-default" ng-click="NextGo(design.class = data[current].class)">+</button>-->
+                    <!--<button class="btn btn-default" ng-click="PrevGo{design.class = data[current].class}">-</button>-->
+                    <!--- experiment with editable bootstrap--->
+                    <!--<div class="container-fluid">-->
+                        <!--<div>-->
+                            <!--<div ng-class="{{design.class}}">-->
+                                <!--&lt;!&ndash;{{design.class}}&ndash;&gt;-->
+                                <!--{{data[current].class}}-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
                 </tab>
             </tabset>
         </div>
@@ -90,4 +100,14 @@
             <code style="white-space: pre-wrap;white-space: -moz-pre-wrap !important;  white-space: -pre-wrap; white-space: -o-pre-wrap; word-wrap: break-word;">{{templatefile}}</code>
         </div>
     </div>
+    <h2>Edit Background Image</h2>
+    <h3>
+        Add background to Login Page:
+    </h3>
+    <h3>
+        Add background to Body:
+    </h3>
+    <h3>
+        Add background to Branded area (Jumbotron):
+    </h3>
 </section>
