@@ -417,7 +417,7 @@ angular.module('textAngularSetup', [])
 		buttonGroup.append(quartButton);
 		buttonGroup.append(resetButton);
 		container.append(buttonGroup);
-		
+
 		buttonGroup = angular.element('<div class="btn-group" style="padding-right: 6px;">');
 		var floatLeft = angular.element('<button type="button" class="btn btn-default btn-sm btn-small" unselectable="on" tabindex="-1"><i class="fa fa-align-left"></i></button>');
 		floatLeft.on('click', function(event){
@@ -441,7 +441,7 @@ angular.module('textAngularSetup', [])
 		buttonGroup.append(floatNone);
 		buttonGroup.append(floatRight);
 		container.append(buttonGroup);
-		
+
 		buttonGroup = angular.element('<div class="btn-group">');
 		var remove = angular.element('<button type="button" class="btn btn-default btn-sm btn-small" unselectable="on" tabindex="-1"><i class="fa fa-trash-o"></i></button>');
 		remove.on('click', function(event){
@@ -451,7 +451,7 @@ angular.module('textAngularSetup', [])
 		});
 		buttonGroup.append(remove);
 		container.append(buttonGroup);
-		
+
 		editorScope.showPopover($element);
 		editorScope.showResizeOverlay($element);
 	};
@@ -496,7 +496,7 @@ angular.module('textAngularSetup', [])
 			onlyWithAttrs: ['ta-insert-video'],
 			action: imgOnSelectAction
 		}
-	});	
+	});
 	taRegisterTool('insertLink', {
 		tooltiptext: taTranslations.insertLink.tooltip,
 		iconclass: 'fa fa-link',

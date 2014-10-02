@@ -7,7 +7,7 @@ Simple.app.controller("colorThemeCtrl", function($scope){
         {
             "tag":              "div",
             "class":            "col-xs-12",
-            "hello":            "",
+            "hello":            "1-column",
             "children": [
             {
                 "tag":          "span",
@@ -18,14 +18,14 @@ Simple.app.controller("colorThemeCtrl", function($scope){
     $scope.designviewdivyou = [
         {
             "tag":              "div",
-            "hello":            "Left Side",
+            "hello":            "Left column",
             "title":            "Left",
             "class":            "col-sm-6"
         },
         {
             "tag":              "div",
             "class":            "col-sm-6",
-            "hello":            "Right Side",
+            "hello":            "Right column",
             "title":            "Right",
             "children": [
                 {
@@ -38,7 +38,7 @@ Simple.app.controller("colorThemeCtrl", function($scope){
         {
             "tag":              "div",
             "class":            "col-sm-4",
-            "hello":            "Left side",
+            "hello":            "Left column",
             "title":            "Left",
             "children": [
                 {
@@ -60,7 +60,7 @@ Simple.app.controller("colorThemeCtrl", function($scope){
         {
             "tag":              "div",
             "class":            "col-sm-4",
-            "hello":            "Right Side",
+            "hello":            "Right column",
             "title":            "Right",
 
             "children": [
@@ -113,21 +113,9 @@ Simple.app.controller("colorThemeCtrl", function($scope){
     $scope.designviewdefault = [
         {
             "tag":              "div",
-            "hello":            '<img src="http://www.four51.com/images/company/c5a12ff8ea8f4cb0aaf8dc662ea7085e.png"/>',
-            "title":            "Left",
-            "class":            "col-sm-6"
-        },
-        {
-            "tag":              "div",
-            "class":            "col-sm-6",
-            "hello":            "<h2>Company Name</h2>",
-            "title":            "Right",
-            "children": [
-                {
-                    "tag":          "span",
-                    "html":         "prexisitingText: {newText}"
-                }
-            ]},
+            "hello":            '<img ng-bind-html src="http://www.four51.com/images/company/c5a12ff8ea8f4cb0aaf8dc662ea7085e.png"/><h2>Company Name</h2>',
+            "class":            "col-xs-12"
+        }
     ];
 
 
@@ -141,7 +129,7 @@ Simple.app.controller("colorThemeCtrl", function($scope){
     ];
 
     $scope.content = '';
-
+$scope.c = "";
     //** Format JSON to HTML
     function format(d){
         angular.forEach(d, function(i){
@@ -213,6 +201,12 @@ Simple.app.controller("colorThemeCtrl", function($scope){
         console.log($scope.templatefile);
     };
 
+    $scope.goclear = function() {
+        $scope.visible1 = false;
+        $scope.visible2 = false;
+        $scope.visible3 = false;
+        $scope.visible4 = false;
+    };
     // stuff, I want to add/subract class names in array at some point
     $scope.addcolumncount = function() {
 

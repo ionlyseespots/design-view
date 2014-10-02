@@ -16,6 +16,32 @@
 </head>
 <body>
 
+<section class="container-fluid clearfix col-collapse">
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <ul class="nav navbar-nav navbar-left">
+            <li>
+                <a href="https://angularjs.org/">A live HTML template editor built with AngularJS</a></span>
+            </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li>
+                <button class="btn btn-default" ng-click="goFullscreen()"><i class="fa fa-expand"></i></button>
+            </li>
+        </ul>
+    </div>
+    <div class="container-fluid" style="margin-top: 75px;">
+        <p>
+            Plugins: <a href="http://textangular.com/">Text Angular</a> <a href="https://github.com/fabiobiondi/angular-fullscreen">Fullscreen</a>
+        </p>
+        <div class="text-center">
+            <h1>
+                Theme Editor
+            </h1>
+            <a href="#/homepage" class="btn btn-default">Home Page</a>
+            <a href="#/backgrounds" class="btn btn-default">Background Images</a>
+            </div>
+</div>
+</section>
 <ng-view autoscroll/>
 
 <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
