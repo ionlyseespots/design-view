@@ -1,19 +1,16 @@
-<section class="container-fluid clearfix col-collapse">
+<section class="container-fluid clearfix col-collapse slideUp">
     <div class="container-fluid" style="margin-top: 75px;">
 
-        <div class="text-center">
-            <div class="well row">
-                <div class="col-sm-3">        <button class="btn btn-default" ng-click="gothem();">Edit Default Header</button></div>
-                <div class="col-sm-3"><a href="#" style="display: block; background-color:#555; padding: 25px; text-align: center; color:#fff;">Select Theme 2 thumbnail</a></div>
-                <div class="col-sm-3"><a href="#" style="display: block; background-color:#555; padding: 25px; text-align: center; color:#fff;">Select 3 thumbnail</a></div>
-                <div class="col-sm-3"><a href="#" style="display: block; background-color:#555; padding: 25px; text-align: center; color:#fff;">Select 4 thumbnail</a></div>
-
+        <div class="container-fluid">
+            <div class="row well text-center">
+                <div class="col-sm-2"> <button class="btn btn-default " style="background-color:#555; width: 100%; min-height: 100px;text-align: center; color:#fff;" ng-click="gothem();">Edit <br />Default</button></div>
+                <div class="col-sm-2"><button class="btn btn-default" style="display: block; background-color:#555; width: 100%; min-height: 100px;text-align: center; color:#fff;">Thumbnail</button></div>
+                <div class="col-sm-2"><button class="btn btn-default" style="display: block; background-color:#555; width: 100%; min-height: 100px; text-align: center; color:#fff;">Thumbnail</button></div>
+                <div class="col-sm-2"><button class="btn btn-default" style="display: block; background-color:#555; width: 100%; min-height: 100px; text-align: center; color:#fff;">Thumbnail</button></div>
+                <div class="col-sm-2 col-sm-offset-2"> <button class="btn btn-default" style="background-color:#555; width: 100%; min-height: 100px;  text-align: center; color:#fff;" ng-click="firstpaneisopen=!firstpaneisopen; goclear(); showhtml=false;"><i class="fa fa-plus fa-2x"></i></button></div>
 
             </div>
-            <button class="btn btn-default" ng-click="firstpaneisopen=!firstpaneisopen; goclear(); showhtml=false;">Custom Header</button>
-
-
-            <div ng-show="firstpaneisopen">
+           <div ng-show="firstpaneisopen">
                 <button class="btn btn-default" ng-click="gome()">1-column</button>
                 <button class="btn btn-default" ng-click="goyou()">2-column Theme</button>
                 <button class="btn btn-default" ng-click="gous()">3-column Theme</button>
@@ -23,17 +20,14 @@
         <br />
         <br />
         <div ng-show="visible4">
-
             <div ng-repeat="design in designviewdefault">
                 <div ng-model="design.hello" ta-toolbar="[['h1','h2','h3','p','bold','italics','ul', 'ol','insertImage','insertLink','html','clear']]" text-angular=""></div>
             </div>
-
         </div>
 
         <div ng-show="visible1" ng-repeat="design in designviewdiv">
             <div ng-model="design.hello" ta-toolbar="[['h1','h2','h3','p','bold','italics','ul', 'ol','insertImage','insertLink','html','clear']]" text-angular=""></div>
         </div>
-
         <div ng-show="visible2">
             <tabset>
                 <tab heading="{{design.title}}" ng-repeat="design in designviewdivyou">
@@ -53,7 +47,6 @@
                 </tab>
             </tabset>
         </div>
-
         <div ng-show="visible3">
             <tabset>
                 <tab heading="{{design.title}}" ng-repeat="design in designviewdivus">
@@ -62,17 +55,28 @@
             </tabset>
         </div>
     </div>
-
     <div class="container-fluid">
-        <button ng-show="visible1" class="btn btn-default" ng-click="gome()">Preview</button>
-        <button ng-show="visible2" class="btn btn-default" ng-click="goyou()">Preview</button>
-        <button ng-show="visible3" class="btn btn-default" ng-click="gous()">Preview</button>
-        <button ng-show="visible4" class="btn btn-default" ng-click="gothem()">Preview</button>
-        <button ng-show="visible1 || visible2 || visible3 || visible4" class="btn btn-default" ng-click="showhtml = !showhtml;">Toggle Generated HTML</button>
-        <div class="container-fluid" style="margin: 25px 0;" ng-show="templatefile" ng-bind-html="templatefile"></div>
+        <button ng-show="visible1" class="btn btn-default" ng-click="gome(); open();">Preview</button>
+        <button ng-show="visible2" class="btn btn-default" ng-click="goyou(); open();">Preview</button>
+        <button ng-show="visible3" class="btn btn-default" ng-click="gous(); open();">Preview</button>
+        <button ng-show="visible4" class="btn btn-default" ng-click="gothem(); open();">Preview</button>
+        <button ng-show="visible1 || visible2 || visible3 || visible4" class="btn btn-default" ng-click="gothem()">Save</button>
+        <button ng-show="visible1 || visible2 || visible3 || visible4" class="btn btn-default pull-right" ng-click="showhtml = !showhtml;">Toggle Generated HTML</button>
 
 
-
+<!--- http://fdietz.github.io/recipes-with-angular-js/common-user-interface-patterns/displaying-a-modal-dialog.html --->
+        <div modal="showModal" close="cancel()">
+            <!--<div class="modal-header">-->
+                <!--<h4>Modal Dialog</h4>-->
+            <!--</div>-->
+            <div class="modal-body">
+                <div class="container-fluid" style="margin: 25px 0;" ng-show="templatefile" ng-bind-html="templatefile"></div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-success" ng-click="ok()">Okay</button>
+                <button class="btn" ng-click="cancel()">Cancel</button>
+            </div>
+        </div>
         <div class="well" ng-show="showhtml">
             <h1>
                 Generated HTML
