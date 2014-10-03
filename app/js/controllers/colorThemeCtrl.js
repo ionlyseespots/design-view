@@ -129,7 +129,7 @@ Simple.app.controller("colorThemeCtrl", function($scope){
     ];
 
     $scope.content = '';
-$scope.c = "";
+    $scope.visible4 = true;
     //** Format JSON to HTML
     function format(d){
         angular.forEach(d, function(i){

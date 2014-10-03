@@ -27,10 +27,10 @@
                 <br />
                 <br />
                 <div class="well row text-center">
-                    <div class="col-sm-2"><a style="display: block; background-color:#555; padding: 25px; text-align: center; color:#fff;" ng-click="gothem();">Default Header</a></div>
-                    <div class="col-sm-2"><a style="display: block; background-color:#555; padding: 25px; text-align: center; color:#fff;">Header 1</a></div>
-                    <div class="col-sm-2"><a style="display: block; background-color:#555; padding: 25px; text-align: center; color:#fff;">Header 2</a></div>
-                    <div class="col-sm-2"><a style="display: block; background-color:#555; padding: 25px; text-align: center; color:#fff;">Header 3</a></div>
+                    <div class="col-sm-2"><a style=" background-color:#555; padding: 25px; text-align: center; color:#fff;" ng-click="gothem();">Default Header</a></div>
+                    <div class="col-sm-2"><a style=" background-color:#555; padding: 25px; text-align: center; color:#fff;">Header 1</a></div>
+                    <div class="col-sm-2"><a style=" background-color:#555; padding: 25px; text-align: center; color:#fff;">Header 2</a></div>
+                    <div class="col-sm-2"><a style="background-color:#555; padding: 25px; text-align: center; color:#fff;">Header 3</a></div>
                     <div class="col-sm-2 col-sm-offset-2"><a style="display: block; background-color:#5cb85c; padding: 25px; text-align: center; color:#fff;" ng-click="firstpaneisopen=!firstpaneisopen; goclear(); showhtml=false;">New Header</a></div>
                 </div>
 
@@ -44,7 +44,7 @@
             </div>
 
             <div ng-show="visible4">
-                <button class="btn btn-default" ng-click="goimage()">Header Background</button>
+                <button class="btn btn-default" ng-click="goimage()" style="float: right;"><i class="fa fa-picture-o"></i> Header Background</button>
                 <div ng-repeat="design in designviewdefault">
                     <div ng-model="design.hello" ta-toolbar="[['h1','h2','h3','p','bold','italics','ul', 'ol','insertImage','insertLink','html','clear']]" text-angular=""></div>
                 </div>
@@ -80,13 +80,10 @@
                 <!--<h4>Modal Dialog</h4>-->
                 <!--</div>-->
                 <div class="modal-body" style="max-width: 900px; margin: 25px auto 0;">
-
-
                     <div class="container-fluid simple-view" style="margin: 15px 0;">
                         <div style="margin: 0 auto; width: 768px;">
                             <div class="laptop">
                                 <div class="content">
-
                                     <nav class="navbar" role="navigation" style="min-height: 60px; border: 1px solid #fff;background-color:#50ACDB; border-radius: 0;">
                                         <section>
                                             <ul class="nav navbar-nav pull-left">
@@ -109,9 +106,9 @@
                                             <ul class="nav navbar-nav pull-right">
                                                 <li class="cart">
                                                     <a class="cart" href="#.#" style="padding: 10px;display: block;color:#fff;" >
-                                            <span class="badge" style="background-color:#0C2A3A;">
-                                                <span>2</span>
-                                            </span>
+                                                        <span class="badge" style="background-color:#0C2A3A;">
+                                                            <span>2</span>
+                                                        </span>
                                                         <i class="fa fa-shopping-cart"style="border: 1px solid rgb(255, 255, 255); border-radius: 50%; padding: 10px;" ></i>
                                                     </a>
                                                 </li>
@@ -129,9 +126,9 @@
                                                 <ul class="nav">
                                                     <li class="pull-left">
                                                         <span class="text-primary">
-                                       <i class="fa fa-bars text-info"></i>
-                                        Categories
-                                         </span>
+                                                        <i class="fa fa-bars text-info"></i>
+                                                        Categories
+                                                         </span>
                                                     </li>
                                                     <li class="pull-right">
                                                         <i class="fa fa-search text-primary"></i>
@@ -140,38 +137,32 @@
                                             </nav>
                                         </div>
                                         <div class="container-fluid">
-
                                             <div class="panel panel-default">
                                                 <div class="panel-heading">
                                                     <h3 class="panel-title">
-
                                                         Categories
-
                                                     </h3>
                                                 </div>
-
-
-                    <div class="panel-body">
-
-                        <nav class="nav">
-                            <ul>
-                                <li>
-                                    <div class="well">
-                                        <a>
-                                            <div class="empty">
-                        <span class="fa empty">
-                            <i class="fa fa-camera"></i>
-                        </span>
-                                          </div>
-                                            <h5>
-                                                Cat Name
-                                            </h5>
-                                        </a>
-                                    </div>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
+                                        <div class="panel-body">
+                                            <nav class="nav">
+                                                <ul>
+                                                    <li>
+                                                        <div class="well">
+                                                            <a>
+                                                                <div class="empty">
+                                                                    <span class="fa empty">
+                                                                        <i class="fa fa-camera"></i>
+                                                                    </span>
+                                                              </div>
+                                                                <h5>
+                                                                    Cat Name
+                                                                </h5>
+                                                            </a>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </nav>
+                                        </div>
                                             </div>
                                             <div class="panel panel-default">
                                                 <div class="panel-heading">
@@ -181,7 +172,6 @@
                                                 </div>
                                                 <div class="panel-body">
                                                 </div>
-
                                             </div>
                                         </div>
                                     </section>
@@ -190,22 +180,12 @@
                             </div>
                         </div>
                     </div>
-
-
-
-
-
-
-
-
-
                 </div>
                 <div class="modal-footer" style="max-width: 900px; margin: 0 auto;">
                     <button class="btn btn-success" ng-click="ok()">Okay</button>
                     <button class="btn" ng-click="cancel()">Cancel</button>
                 </div>
             </div>
-
 
             <div ng-show="visible5" ng-model="design.hello" ta-toolbar="[['insertImage','clear']]" text-angular=""></div>
             <div ng-show="visible6" ng-model="design.hello" ta-toolbar="[['insertImage','clear']]" text-angular=""></div>
@@ -234,6 +214,6 @@
                     File Override
                 </p>
                 <code style="white-space: pre-wrap;white-space: -moz-pre-wrap !important;  white-space: -pre-wrap; white-space: -o-pre-wrap; word-wrap: break-word;">{{templatefile}}</code>
-
+            </div>
     </div>
 </section>
