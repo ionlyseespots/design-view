@@ -1,0 +1,115 @@
+
+<section class="container-fluid clearfix col-collapse">
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+        <ul class="nav navbar-nav navbar-left">
+            <li>
+                <a href="https://angularjs.org/">A live HTML template editor built with AngularJS</a></span>
+            </li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li>
+                <button class="btn btn-default" ng-click="goFullscreen()"><i class="fa fa-expand"></i></button>
+            </li>
+        </ul>
+    </div>
+    <div class="container-fluid" style="margin-top: 75px;">
+        <p>
+            Plugins: <a href="http://textangular.com/">Text Angular</a> <a href="https://github.com/fabiobiondi/angular-fullscreen">Fullscreen</a>
+        </p>
+        <div class="text-center">
+            <h1>
+                Theme Editor
+            </h1>
+            <div class="well row">
+                <div class="col-sm-3"><button class="btn btn-default" ng-click="gothem();">Edit Default </button></div>
+                <div class="col-sm-3"><a href="#" style="display: block; background-color:#555; padding: 25px; text-align: center; color:#fff;">Theme 1</a></div>
+                <div class="col-sm-3"><a href="#" style="display: block; background-color:#555; padding: 25px; text-align: center; color:#fff;">Theme 2</a></div>
+                <div class="col-sm-3"><a href="#" style="display: block; background-color:#555; padding: 25px; text-align: center; color:#fff;">Theme 3</a></div>
+            </div>
+            <button class="btn btn-default" ng-click="goimage()">Login Background</button>
+            <button class="btn btn-default" ng-click="goimage2()">Header Background</button>
+            <button class="btn btn-default" ng-click="goimage3()">Body Background</button>
+            <button class="btn btn-default" ng-click="firstpaneisopen=!firstpaneisopen; goclear(); showhtml=false;">Create Custom Header</button>
+            <div ng-show="firstpaneisopen">
+                <button class="btn btn-default" ng-click="gome()">1-column</button>
+                <button class="btn btn-default" ng-click="goyou()">2-column Theme</button>
+                <button class="btn btn-default" ng-click="gous()">3-column Theme</button>
+            </div>
+        </div>
+        <br />
+        <br />
+        <div ng-show="visible4">
+            <div ng-repeat="design in designviewdefault">
+                <div ng-model="design.hello" ta-toolbar="[['h1','h2','h3','p','bold','italics','ul', 'ol','insertImage','insertLink','html','clear']]" text-angular=""></div>
+            </div>
+        </div>
+        <div ng-show="visible1" ng-repeat="design in designviewdiv">
+            <div ng-model="design.hello" ta-toolbar="[['h1','h2','h3','p','bold','italics','ul', 'ol','insertImage','insertLink','html','clear']]" text-angular=""></div>
+        </div>
+        <div ng-show="visible2">
+            <tabset>
+                <tab heading="{{design.title}}" ng-repeat="design in designviewdivyou">
+                    <div ng-model="design.hello" ta-toolbar="[['h1','h2','h3','p','bold','italics','ul', 'ol','insertImage','insertLink','html','clear']]" text-angular=""></div>
+
+                </tab>
+            </tabset>
+        </div>
+        <div ng-show="visible3">
+            <tabset>
+                <tab heading="{{design.title}}" ng-repeat="design in designviewdivus">
+                    <div ng-model="design.hello" ta-toolbar="[['h1','h2','h3','p','bold','italics','ul', 'ol','insertImage','insertLink','html','clear']]" text-angular=""></div>
+                </tab>
+            </tabset>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <button ng-show="visible1" class="btn btn-default" ng-click="gome(); open();">Preview</button>
+        <button ng-show="visible2" class="btn btn-default" ng-click="goyou(); open();">Preview</button>
+        <button ng-show="visible3" class="btn btn-default" ng-click="gous(); open();">Preview</button>
+        <button ng-show="visible4" class="btn btn-default" ng-click="gothem(); open();">Preview</button>
+        <button ng-show="visible1 || visible2 || visible3 || visible4" class="btn btn-success" ng-click="gothem()">Save Header</button>
+        <!--- http://fdietz.github.io/recipes-with-angular-js/common-user-interface-patterns/displaying-a-modal-dialog.html --->
+        <div modal="showModal" close="cancel()">
+            <!--<div class="modal-header">-->
+            <!--<h4>Modal Dialog</h4>-->
+            <!--</div>-->
+            <div class="modal-body">
+                <div class="container-fluid" style="margin: 25px 0;" ng-show="templatefile" ng-bind-html="templatefile"></div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-success" ng-click="ok()">Okay</button>
+                <button class="btn" ng-click="cancel()">Cancel</button>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div ng-show="visible5" ng-model="design.hello" ta-toolbar="[['insertImage','clear']]" text-angular=""></div>
+        <div ng-show="visible6" ng-model="design.hello" ta-toolbar="[['insertImage','clear']]" text-angular=""></div>
+        <div ng-show="visible7" ng-model="design.hello" ta-toolbar="[['insertImage','clear']]" text-angular=""></div>
+        <button ng-show="visible5" class="btn btn-success" ng-click="">Save Background</button>
+        <button ng-show="visible6" class="btn btn-success" ng-click="">Save Background</button>
+        <button ng-show="visible7" class="btn btn-success" ng-click="">Save Background</button>
+        <button class="btn btn-primary pull-right" ng-click="showhtml = !showhtml;">Toggle Generated HTML/CSS</button>
+    </div>
+    <div class="container-fluid">
+        <!--<button ng-show="visible5 || visible6 || visible7" class="btn btn-primary pull-right" ng-click="showhtml = !showhtml;">Toggle Generated CSS</button>-->
+        <div class="well" ng-show="showhtml">
+            <h1>
+                Generated HTML
+            </h1>
+            <p class="alert-info alert text-center">
+                File Override
+            </p>
+            <code style="white-space: pre-wrap;white-space: -moz-pre-wrap !important;  white-space: -pre-wrap; white-space: -o-pre-wrap; word-wrap: break-word;">{{templatefile}}</code>
+        </div>
+        <div class="well" ng-show="showhtml">
+            <h1>
+                Generated CSS
+            </h1>
+            <p class="alert-info alert text-center">
+                File Override
+            </p>
+            <code style="white-space: pre-wrap;white-space: -moz-pre-wrap !important;  white-space: -pre-wrap; white-space: -o-pre-wrap; word-wrap: break-word;">{{templatefile}}</code>
+        </div>
+    </div>
+</section>
