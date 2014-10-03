@@ -9,7 +9,7 @@ section {position: relative;}
 .well a {
     display: inline-block; width: 100%; height: 100%; cursor: pointer;
 }
-
+.nav > li > a {display: inline;}
 .modal {
     bottom: 0;
     display: none;
