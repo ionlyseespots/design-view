@@ -2,6 +2,10 @@
 html {overflow-y:scroll; }
 
 section {position: relative;}
+
+.ta-root {
+    margin-bottom: 25px;
+}
 .navbar-nav.navbar-right:last-child {
     margin-right: 0;
 }
@@ -10,6 +14,9 @@ section {position: relative;}
     display: inline-block; width: 100%; height: 100%; cursor: pointer;
 }
 .nav > li > a {display: inline;}
+.row {
+    margin-left: 0; margin-right: 0;
+}
 .modal {
     bottom: 0;
     display: none;
