@@ -20,25 +20,30 @@
             <h1>
                 Theme Editor
             </h1>
-            <div class="well row">
-                <div class="col-sm-3"><button class="btn btn-default" ng-click="gothem();">Edit Default </button></div>
-                <div class="col-sm-3"><a href="#" style="display: block; background-color:#555; padding: 25px; text-align: center; color:#fff;">Theme 1</a></div>
-                <div class="col-sm-3"><a href="#" style="display: block; background-color:#555; padding: 25px; text-align: center; color:#fff;">Theme 2</a></div>
-                <div class="col-sm-3"><a href="#" style="display: block; background-color:#555; padding: 25px; text-align: center; color:#fff;">Theme 3</a></div>
-            </div>
             <button class="btn btn-default" ng-click="goimage()">Login Background</button>
-            <button class="btn btn-default" ng-click="goimage2()">Header Background</button>
-            <button class="btn btn-default" ng-click="goimage3()">Body Background</button>
-            <button class="btn btn-default" ng-click="firstpaneisopen=!firstpaneisopen; goclear(); showhtml=false;">Create Custom Header</button>
+            <button class="btn btn-default" ng-click="goimage()">Body Background</button>
+            <br />
+            <br />
+            <div class="well row text-center">
+                <div class="col-sm-2"><a style="display: block; background-color:#555; padding: 25px; text-align: center; color:#fff;" ng-click="gothem();">Default Header</a></div>
+                <div class="col-sm-2"><a style="display: block; background-color:#555; padding: 25px; text-align: center; color:#fff;">Header 1</a></div>
+                <div class="col-sm-2"><a style="display: block; background-color:#555; padding: 25px; text-align: center; color:#fff;">Header 2</a></div>
+                <div class="col-sm-2"><a style="display: block; background-color:#555; padding: 25px; text-align: center; color:#fff;">Header 3</a></div>
+                <div class="col-sm-2 col-sm-offset-2"><a style="display: block; background-color:#555; padding: 25px; text-align: center; color:#fff;" ng-click="firstpaneisopen=!firstpaneisopen; goclear(); showhtml=false;">New Header</a></div>
+            </div>
+
+
+
             <div ng-show="firstpaneisopen">
                 <button class="btn btn-default" ng-click="gome()">1-column</button>
-                <button class="btn btn-default" ng-click="goyou()">2-column Theme</button>
-                <button class="btn btn-default" ng-click="gous()">3-column Theme</button>
+                <button class="btn btn-default" ng-click="goyou()">2-column</button>
+                <button class="btn btn-default" ng-click="gous()">3-column</button>
             </div>
         </div>
         <br />
         <br />
         <div ng-show="visible4">
+            <button class="btn btn-default" ng-click="goimage()">Header Background</button>
             <div ng-repeat="design in designviewdefault">
                 <div ng-model="design.hello" ta-toolbar="[['h1','h2','h3','p','bold','italics','ul', 'ol','insertImage','insertLink','html','clear']]" text-angular=""></div>
             </div>
