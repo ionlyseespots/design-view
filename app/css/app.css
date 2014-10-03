@@ -15,7 +15,7 @@ section {position: relative;}
     border: 1px solid #f0f0f0;
 }
 .well a {
-    display: inline-block; cursor: pointer;
+    display: block; cursor: pointer;min-height: 85px;
 }
 .nav > li > a {display: inline;}
 
