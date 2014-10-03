@@ -19,8 +19,9 @@ section {position: relative;}
 }
 .nav > li > a {display: inline;}
 
-
-
+.phone {width: 320px; margin: 0 auto;}
+.tablet {width: 768px; margin: 0 auto;}
+.desktop {}
 .text-primary {color: #00355f;}
 
 ul li span.text-primary { display: inline-block;
@@ -296,7 +297,7 @@ label {font-size: 11px;}
     position: relative;
     margin: 0 auto;
     top: 0;
-    width: 718px;
+    width: 768px;
 }
 .container {
     margin: 0 auto;

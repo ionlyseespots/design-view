@@ -79,11 +79,13 @@
                 <!--<div class="modal-header">-->
                 <!--<h4>Modal Dialog</h4>-->
                 <!--</div>-->
-                <div class="modal-body" style="max-width: 900px; margin: 25px auto 0;">
-                    <div class="container-fluid simple-view" style="margin: 15px 0;">
-                        <div style="margin: 0 auto; width: 768px;">
-                            <div class="laptop">
-                                <div class="content">
+                <div class="modal-body" style="max-width: 1280px; margin: 25px auto 0;">
+
+
+
+
+
+                                <div ng-class='{"phone":tog==1, "tablet":tog==2, "desktop":tog==3}' style="height: 400px; overflow-y: scroll; overflow-x: hidden;">
                                     <nav class="navbar" role="navigation" style="min-height: 60px; border: 1px solid #fff;background-color:#50ACDB; border-radius: 0;">
                                         <section>
                                             <ul class="nav navbar-nav pull-left">
@@ -176,12 +178,19 @@
                                         </div>
                                     </section>
                                 </div>
-                                <div class="btm"></div>
-                            </div>
-                        </div>
-                    </div>
+
+
+
+
+
                 </div>
-                <div class="modal-footer" style="max-width: 900px; margin: 0 auto;">
+                <div class="modal-footer" style="max-width: 1280px; margin: 0 auto;">
+                    <div class="btn-group btn-group-lg pull-left">
+                        <button class="btn btn-default" ng-click='tog=1'><i class="fa fa-mobile"></i></button>
+                        <button class="btn btn-default" ng-click='tog=2'><i class="fa fa-tablet"></i></button>
+                        <button class="btn btn-default" ng-click='tog=3'><i class="fa fa-desktop"></i></button>
+                    </div>
+
                     <button class="btn btn-success" ng-click="ok()">Okay</button>
                     <button class="btn" ng-click="cancel()">Cancel</button>
                 </div>
