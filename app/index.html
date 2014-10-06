@@ -12,10 +12,45 @@
 </head>
 <body>
 
+<section class="container-fluid clearfix col-collapse">
+
+
+    <div class="container-fluid" style="max-width: 768px; margin: 35px auto 0;">
+        <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+            <ul class="nav navbar-nav navbar-left">
+                <li>
+                    <a href="https://angularjs.org/">A live HTML template editor built with AngularJS</a></span>
+                </li>
+                <li>
+                    Plugins: <a href="http://textangular.com/">Text Angular</a> <a href="https://github.com/fabiobiondi/angular-fullscreen">Fullscreen</a>
+                </li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <button class="btn btn-default" ng-click="goFullscreen()"><i class="fa fa-expand"></i></button>
+                </li>
+            </ul>
+        </div>
+
+        <div class="text-center">
+            <h1>
+                Theme Editor
+            </h1>
+            <a href="#/headerTemplate" class="btn btn-default">Header</a>
+            <a href="#/loginBackground" class="btn btn-default">Login Background</a>
+            <a href="#/bodyBackground" class="btn btn-default">Body Background</a>
+            <br />
+            <br />
+
+        </div>
+
 <ng-view autoscroll/>
 
+    </div>
+</section>
+
 <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
-<!--<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>-->
+<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 
 <script src="js/app.js" type="text/javascript"></script>
 <script src="lib/angular/angular-route.js"></script>
@@ -25,7 +60,7 @@
 <script src="js/controllers/SimplerCtrl.js" type="text/javascript"></script>
 <script src="js/controllers/themeEditorCtrl.js" type="text/javascript"></script>
 
-
+<script src="js/directives/nav.js" type="text/javascript"></script>
 
 <!--https://github.com/fabiobiondi/angular-fullscreen-->
 <script src="lib/angular/angular-fullscreen.js" type="text/javascript"></script>

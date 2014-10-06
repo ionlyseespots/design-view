@@ -2,6 +2,8 @@ var Simple = {};
 
 Simple.app = angular.module('SimpleApp',['ngRoute', 'FBAngular', 'textAngular', 'ngSanitize', 'ui.bootstrap', 'ui.bootstrap.modal']).
     config(['$routeProvider', function($routeProvider) {
-        $routeProvider.when('/themeEditor', {templateUrl: 'partials/themeEditor.html', controller: 'colorThemeCtrl'});
-        $routeProvider.otherwise({redirectTo: '/themeEditor'});
+        $routeProvider.when('/headerTemplate', {templateUrl: 'partials/header.html', controller: 'colorThemeCtrl'});
+        $routeProvider.when('/loginBackground', {templateUrl: 'partials/loginBackground.html', controller: 'colorThemeCtrl'});
+        $routeProvider.when('/bodyBackground', {templateUrl: 'partials/bodyBackground.html', controller: 'colorThemeCtrl'});
+        $routeProvider.otherwise({redirectTo: '/headerTemplate'});
     }]);

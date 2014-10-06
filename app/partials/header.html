@@ -1,0 +1,204 @@
+<div class="text-center">
+    <div ng-show="headerpane" class="well row text-center">
+        <div class="col-sm-2"><a style=" background-color:#555; padding: 25px 0; text-align: center; color:#fff;" ng-click="gothem();">Default Header</a></div>
+        <div class="col-sm-2"><a style=" background-color:#555; padding: 25px 0; text-align: center; color:#fff;">Header 1</a></div>
+        <div class="col-sm-2"><a style=" background-color:#555; padding: 25px 0; text-align: center; color:#fff;">Header 2</a></div>
+        <div class="col-sm-2"><a style="background-color:#555; padding: 25px 0; text-align: center; color:#fff;">Header 3</a></div>
+        <div class="col-sm-2 col-sm-offset-2"><a style="display: block; background-color:#5cb85c; padding: 25px 0; text-align: center; color:#fff;" ng-click="firstpaneisopen=!firstpaneisopen; goclear(); showhtml=false;">New</a></div>
+    </div>
+
+
+
+    <div ng-show="firstpaneisopen" class="text-left" style="margin-bottom: 25px;">
+        <button class="btn btn-default" ng-click="gome()">Custom</button>
+        <button class="btn btn-default" ng-click="goyou()">2-column</button>
+        <button class="btn btn-default" ng-click="gous()">3-column</button>
+    </div>
+</div>
+<div>
+    <button class="btn btn-default" ng-click="goimageheader();isActiveHeaderBg = !isActiveHeaderBg;" style="float: right;">Toggle Background</button>
+    <div  ng-class="{'': !isActiveHeaderBg, 'hidden': isActiveHeaderBg}"  ng-repeat="design in designviewdefault">
+        <div ng-model="design.hello" ta-toolbar="[['h1','h2','h3','p','bold','italics','ul', 'ol','insertImage','insertLink','html','clear']]" text-angular=""></div>
+    </div>
+</div>
+<div ng-show="visible1" ng-repeat="design in designviewdiv">
+    <div ng-model="design.hello" ta-toolbar="[['h1','h2','h3','p','bold','italics','ul', 'ol','insertImage','insertLink','html','clear']]" text-angular=""></div>
+</div>
+<div ng-show="visible2">
+    <tabset>
+        <tab heading="{{design.title}}" ng-repeat="design in designviewdivyou">
+            <div ng-model="design.hello" ta-toolbar="[['h1','h2','h3','p','bold','italics','ul', 'ol','insertImage','insertLink','html','clear']]" text-angular=""></div>
+
+        </tab>
+    </tabset>
+</div>
+<div ng-show="visible3">
+    <tabset>
+        <tab heading="{{design.title}}" ng-repeat="design in designviewdivus">
+            <div ng-model="design.hello" ta-toolbar="[['h1','h2','h3','p','bold','italics','ul', 'ol','insertImage','insertLink','html','clear']]" text-angular=""></div>
+        </tab>
+    </tabset>
+</div>
+
+
+<button ng-show="visible1" class="btn btn-default" ng-click="gome(); open();">Preview</button>
+<button ng-show="visible2" class="btn btn-default" ng-click="goyou(); open();">Preview</button>
+<button ng-show="visible3" class="btn btn-default" ng-click="gous(); open();">Preview</button>
+<button ng-class="{'': !isActiveHeaderBg, 'hidden': isActiveHeaderBg}" class="btn btn-default" ng-click="gothem(); open();">Preview</button>
+<button ng-class="{'': !isActiveHeaderBg, 'hidden': isActiveHeaderBg}" class="btn btn-success" ng-click="gothem()">Save Header</button>
+
+<!--- http://fdietz.github.io/recipes-with-angular-js/common-user-interface-patterns/displaying-a-modal-dialog.html --->
+<div modal="showModal" close="cancel()">
+    <!--<div class="modal-header">-->
+    <!--<h4>Modal Dialog</h4>-->
+    <!--</div>-->
+    <div class="modal-body" style="max-width: 1280px; margin: 25px auto 0;">
+
+
+
+
+
+        <div ng-class='{"phone":tog==1, "tablet":tog==2, "desktop":tog==3}' style="height: 400px; overflow-y: scroll; overflow-x: hidden;">
+            <nav class="navbar" role="navigation" style="min-height: 60px; border: 1px solid #fff;background-color:#50ACDB; border-radius: 0;">
+                <section>
+                    <ul class="nav navbar-nav pull-left">
+                        <li>
+                            <a href="#.#" style="padding: 20px; display: block; color:#fff;background-color:#359FD5;">
+                                <i class="fa fa-home"></i>
+                            </a>
+                        </li>
+                        <li class="order">
+                            <a href="#.#" style="padding: 20px; display: block; color:#fff;">
+                                <i class="fa fa-bar-chart-o"></i>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#.#" style="padding: 20px; display: block; color:#fff;">
+                                <i class="fa fa-cog"></i>
+                            </a>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav pull-right">
+                        <li class="cart">
+                            <a class="cart" href="#.#" style="padding: 10px;display: block;color:#fff;" >
+                                                        <span class="badge" style="background-color:#0C2A3A;">
+                                                            <span>2</span>
+                                                        </span>
+                                <i class="fa fa-shopping-cart"style="border: 1px solid rgb(255, 255, 255); border-radius: 50%; padding: 10px;" ></i>
+                            </a>
+                        </li>
+                    </ul>
+                </section>
+            </nav>
+            <section class="active text-center" style="margin-top: 5px;">
+
+                <div class="container-fluid" style="margin: 25px 0;" ng-show="templatefile" ng-bind-html="templatefile"></div>
+
+            </section>
+            <section class="container-view">
+                <div class="container-fluid">
+                    <nav>
+                        <ul class="nav">
+                            <li class="pull-left">
+                                                        <span class="text-primary">
+                                                        <i class="fa fa-bars text-info"></i>
+                                                        Categories
+                                                         </span>
+                            </li>
+                            <li class="pull-right">
+                                <i class="fa fa-search text-primary"></i>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="container-fluid">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">
+                                Categories
+                            </h3>
+                        </div>
+                        <div class="panel-body">
+                            <nav class="nav">
+                                <ul>
+                                    <li>
+                                        <div class="well">
+                                            <a>
+                                                <div class="empty">
+                                                                    <span class="fa empty">
+                                                                        <i class="fa fa-camera"></i>
+                                                                    </span>
+                                                </div>
+                                                <h5>
+                                                    Cat Name
+                                                </h5>
+                                            </a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">
+                                Products
+                            </h3>
+                        </div>
+                        <div class="panel-body">
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+
+
+
+
+    </div>
+    <div class="modal-footer" style="max-width: 1280px; margin: 0 auto;">
+        <div class="btn-group btn-group-lg pull-left">
+            <button class="btn btn-default" ng-click='tog=1'><i class="fa fa-mobile"></i></button>
+            <button class="btn btn-default" ng-click='tog=2'><i class="fa fa-tablet"></i></button>
+            <button class="btn btn-default" ng-click='tog=3'><i class="fa fa-desktop"></i></button>
+        </div>
+
+        <button class="btn btn-success" ng-click="ok()">Okay</button>
+        <button class="btn" ng-click="cancel()">Cancel</button>
+    </div>
+</div>
+<div  ng-class="{'hidden': !isActiveHeaderBg, '': isActiveHeaderBg}">
+    <!--<button class="btn btn-default" ng-click="gothem()" style="float: right;">Toggle Background</button>-->
+    <div ng-model="design.hello" ta-toolbar="[['insertImage','clear']]" text-angular=""></div>
+</div>
+
+
+
+<button ng-class="{'hidden': !isActiveHeaderBg, '': isActiveHeaderBg}" class="btn btn-success" ng-click="goimageheader()">Save Header Background</button>
+
+
+<button class="btn btn-primary pull-right" ng-click="showhtmlcss = !showhtmlcss;">Toggle Generated HTML/CSS</button>
+
+
+<!--<button ng-show="visible5 || visible6 || visible7" class="btn btn-primary pull-right" ng-click="showhtml = !showhtml;">Toggle Generated CSS</button>-->
+<div ng-show="showhtmlcss">
+    <div class="well" ng-class="{'': !isActiveHeaderBg, 'hidden': isActiveHeaderBg}" style="margin-top: 25px;">
+        <h1>
+            Generated HTML
+        </h1>
+        <p class="alert-info alert text-center">
+            File Override
+        </p>
+        <code style="white-space: pre-wrap;white-space: -moz-pre-wrap !important;  white-space: -pre-wrap; white-space: -o-pre-wrap; word-wrap: break-word;">{{templatefile}}</code>
+    </div>
+    <div class="well" ng-class="{'hidden': !isActiveHeaderBg, '': isActiveHeaderBg}" style="margin-top: 25px;">
+        <h1>
+            Generated CSS
+        </h1>
+        <p class="alert-info alert text-center">
+            File Override
+        </p>
+        <code style="white-space: pre-wrap;white-space: -moz-pre-wrap !important;  white-space: -pre-wrap; white-space: -o-pre-wrap; word-wrap: break-word;">{{cssfile}}</code>
+    </div>
+</div>
