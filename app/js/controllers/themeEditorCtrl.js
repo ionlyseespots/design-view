@@ -222,7 +222,7 @@ Simple.app.controller("colorThemeCtrl", function($scope){
         $scope.templatefile = "";
         format($scope.designviewdefault);
 
-        var opencontainer = '<section class="jumbotron container-fluid">' + '\n';
+        var opencontainer = '<!-- branding.html -->' + '\n' + '<section class="jumbotron container-fluid">' + '\n';
         var closecontainer = '</section>';
 
         $scope.templatefile = opencontainer + $scope.templatefile + closecontainer;
