@@ -168,28 +168,57 @@ Simple.app.controller("colorThemeCtrl", function($scope){
         $scope.visible1 = false;
         $scope.visible2 = false;
         $scope.visible3 = true;
-        $scope.visibled4 = false;
+        $scope.visible4 = false;
         $scope.templatefile = "";
         format($scope.designviewdivus);
         console.log($scope.templatefile);
     };
 
-    $scope.goimage = function() {
+    $scope.goimageheader = function() {
         $scope.visible1 = false;
         $scope.visible2 = false;
         $scope.visible3 = false;
-        $scope.visibled4 = false;
+        $scope.visible4 = false;
         $scope.visible5 = true;
+        $scope.visible6 = false;
+        $scope.visible7 = false;
         $scope.cssfile = "";
 
 
     };
 
+    $scope.goimagelogin = function() {
+        $scope.visible1 = false;
+        $scope.visible2 = false;
+        $scope.visible3 = false;
+        $scope.visible4 = false;
+        $scope.visible5 = false;
+        $scope.visible6 = true;
+        $scope.visible7 = false;
+        $scope.cssfile = "";
+
+
+    };
+    $scope.goimagebody = function() {
+        $scope.visible1 = false;
+        $scope.visible2 = false;
+        $scope.visible3 = false;
+        $scope.visible4 = false;
+        $scope.visible5 = false;
+        $scope.visible6 = false;
+        $scope.visible7 = true;
+        $scope.cssfile = "";
+
+
+    };
     $scope.gothem = function() {
         $scope.visible1 = false;
         $scope.visible2 = false;
         $scope.visible3 = false;
         $scope.visible4 = true;
+        $scope.visible5 = false;
+        $scope.visible6 = false;
+        $scope.visible7 = false;
         $scope.templatefile = "";
         format($scope.designviewdefault);
 

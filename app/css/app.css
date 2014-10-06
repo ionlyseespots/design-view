@@ -13,6 +13,7 @@ section {position: relative;}
 .well {
     background-color: #ffffff;
     border: 1px solid #f0f0f0;
+    padding: 10px;
 }
 .well a {
     display: block; cursor: pointer;min-height: 85px;
