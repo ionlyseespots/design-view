@@ -129,7 +129,14 @@ Simple.app.controller("colorThemeCtrl", function($scope){
     ];
 
     $scope.content = '';
+    $scope.headerpane = true;
     $scope.visible4 = true;
+
+
+
+
+
+
     //** Format JSON to HTML
     function format(d){
         angular.forEach(d, function(i){
@@ -175,6 +182,7 @@ Simple.app.controller("colorThemeCtrl", function($scope){
     };
 
     $scope.goimageheader = function() {
+        $scope.firstpaneisopen = false;
         $scope.visible1 = false;
         $scope.visible2 = false;
         $scope.visible3 = false;
@@ -188,6 +196,8 @@ Simple.app.controller("colorThemeCtrl", function($scope){
     };
 
     $scope.goimagelogin = function() {
+        $scope.firstpaneisopen = false;
+        $scope.headerpane = false;
         $scope.visible1 = false;
         $scope.visible2 = false;
         $scope.visible3 = false;
@@ -200,6 +210,8 @@ Simple.app.controller("colorThemeCtrl", function($scope){
 
     };
     $scope.goimagebody = function() {
+        $scope.firstpaneisopen = false;
+        $scope.headerpane = false;
         $scope.visible1 = false;
         $scope.visible2 = false;
         $scope.visible3 = false;
@@ -212,6 +224,8 @@ Simple.app.controller("colorThemeCtrl", function($scope){
 
     };
     $scope.gothem = function() {
+        $scope.firstpaneisopen = false;
+        $scope.headerpane = true;
         $scope.visible1 = false;
         $scope.visible2 = false;
         $scope.visible3 = false;
@@ -235,6 +249,9 @@ Simple.app.controller("colorThemeCtrl", function($scope){
         $scope.visible2 = false;
         $scope.visible3 = false;
         $scope.visible4 = false;
+        $scope.visible5 = false;
+        $scope.visible6 = false;
+        $scope.visible7 = false;
     };
     // stuff, I want to add/subract class names in array at some point
     $scope.addcolumncount = function() {

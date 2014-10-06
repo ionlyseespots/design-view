@@ -3,6 +3,15 @@ html {overflow-y:scroll; }
 
 section {position: relative;}
 
+.ta-editor {
+    min-height: 300px;
+    height: auto;
+    overflow: auto;
+    font-family: inherit;
+    font-size: 100%;
+    margin:20px 0;
+}
+
 .ta-root {
     margin-bottom: 25px;
     margin-top: 25px;

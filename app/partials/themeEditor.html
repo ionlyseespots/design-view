@@ -22,11 +22,12 @@
                 <h1>
                     Theme Editor
                 </h1>
+                <button class="btn btn-default" ng-click="gothem()">Header</button>
                 <button class="btn btn-default" ng-click="goimagelogin()">Login Background</button>
                 <button class="btn btn-default" ng-click="goimagebody()">Body Background</button>
                 <br />
                 <br />
-                <div class="well row text-center">
+                <div ng-show="headerpane" class="well row text-center">
                     <div class="col-sm-2"><a style=" background-color:#555; padding: 25px 0; text-align: center; color:#fff;" ng-click="gothem();">Default Header</a></div>
                     <div class="col-sm-2"><a style=" background-color:#555; padding: 25px 0; text-align: center; color:#fff;">Header 1</a></div>
                     <div class="col-sm-2"><a style=" background-color:#555; padding: 25px 0; text-align: center; color:#fff;">Header 2</a></div>
