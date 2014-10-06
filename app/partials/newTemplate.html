@@ -1,26 +1,32 @@
-<div class="text-center">
-    <div ng-show="headerpane" class="well row text-center">
-        <div class="col-sm-2"><a style=" background-color:#555; padding: 25px 0; text-align: center; color:#fff;" ng-click="gothem();">Default Header</a></div>
-        <div class="col-sm-2"><a style=" background-color:#555; padding: 25px 0; text-align: center; color:#fff;">Header 1</a></div>
-        <div class="col-sm-2"><a style=" background-color:#555; padding: 25px 0; text-align: center; color:#fff;">Header 2</a></div>
-        <div class="col-sm-2"><a style="background-color:#555; padding: 25px 0; text-align: center; color:#fff;">Header 3</a></div>
-   </div>
 
-
-
+<div class="text-center" style="margin-bottom: 25px;">
+    <button class="btn btn-default" ng-click="gome()">Custom</button>
+    <button class="btn btn-default" ng-click="goyou()">2-column</button>
+    <button class="btn btn-default" ng-click="gous()">3-column</button>
 </div>
-<div>
-    <button class="btn btn-default" ng-click="goimageheader();isActiveHeaderBg = !isActiveHeaderBg;" style="float: right;">Toggle Background</button>
-    <div  ng-class="{'': !isActiveHeaderBg, 'hidden': isActiveHeaderBg}"  ng-repeat="design in designviewdefault">
-        <div ng-model="design.hello" ta-toolbar="[['h1','h2','h3','p','bold','italics','ul', 'ol','insertImage','insertLink','html','clear']]" text-angular=""></div>
-    </div>
+<div ng-show="visible1" ng-repeat="design in designviewdiv">
+    <div ng-model="design.hello" ta-toolbar="[['h1','h2','h3','p','bold','italics','ul', 'ol','insertImage','insertLink','html','clear']]" text-angular=""></div>
+</div>
+<div ng-show="visible2">
+    <tabset>
+        <tab heading="{{design.title}}" ng-repeat="design in designviewdivyou">
+            <div ng-model="design.hello" ta-toolbar="[['h1','h2','h3','p','bold','italics','ul', 'ol','insertImage','insertLink','html','clear']]" text-angular=""></div>
+
+        </tab>
+    </tabset>
+</div>
+<div ng-show="visible3">
+    <tabset>
+        <tab heading="{{design.title}}" ng-repeat="design in designviewdivus">
+            <div ng-model="design.hello" ta-toolbar="[['h1','h2','h3','p','bold','italics','ul', 'ol','insertImage','insertLink','html','clear']]" text-angular=""></div>
+        </tab>
+    </tabset>
 </div>
 
-
-
-<button ng-class="{'': !isActiveHeaderBg, 'hidden': isActiveHeaderBg}" class="btn btn-default" ng-click="gothem(); open();">Preview</button>
-<button ng-class="{'': !isActiveHeaderBg, 'hidden': isActiveHeaderBg}" class="btn btn-success" ng-click="gothem()">Save Header</button>
-
+<button ng-show="visible1" class="btn btn-default" ng-click="gome(); open();">Preview</button>
+<button ng-show="visible2" class="btn btn-default" ng-click="goyou(); open();">Preview</button>
+<button ng-show="visible3" class="btn btn-default" ng-click="gous(); open();">Preview</button>
+<button ng-show="visible1 || visible2 || visible3" class="btn btn-success" ng-click="gothem()">Save</button>
 <!--- http://fdietz.github.io/recipes-with-angular-js/common-user-interface-patterns/displaying-a-modal-dialog.html --->
 <div modal="showModal" close="cancel()">
     <!--<div class="modal-header">-->
@@ -152,7 +158,7 @@
 <button ng-class="{'hidden': !isActiveHeaderBg, '': isActiveHeaderBg}" class="btn btn-success" ng-click="goimageheader()">Save Header Background</button>
 
 
-<button class="btn btn-primary pull-right" ng-click="showhtmlcss = !showhtmlcss;">Toggle Generated HTML/CSS</button>
+<button  ng-show="visible1 || visible2 || visible3" class="btn btn-primary pull-right" ng-click="showhtmlcss = !showhtmlcss;">Toggle Generated HTML/CSS</button>
 
 
 <!--<button ng-show="visible5 || visible6 || visible7" class="btn btn-primary pull-right" ng-click="showhtml = !showhtml;">Toggle Generated CSS</button>-->
