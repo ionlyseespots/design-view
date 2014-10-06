@@ -131,7 +131,8 @@ Simple.app.controller("colorThemeCtrl", function($scope){
     $scope.content = '';
     $scope.headerpane = true;
     $scope.visible4 = true;
-
+    $scope.showhtml = false;
+    $scope.showcss = false;
 
 
 
@@ -140,6 +141,7 @@ Simple.app.controller("colorThemeCtrl", function($scope){
     //** Format JSON to HTML
     function format(d){
         angular.forEach(d, function(i){
+           //html
             var tagopen = '<' + i.tag;
             var t = i.tag;
             var c = i.class;
@@ -149,8 +151,18 @@ Simple.app.controller("colorThemeCtrl", function($scope){
             var designinner = i.hello;
             var tagclose = '</' + i.tag + '>';
             $scope.templatefile += tagopen + ' class="' + c + '">' + designinner + tagclose + '\n' + ' \r';
+            //css
+            var dot = ".";
+            var pc = i.parentclass ? dot + i.parentclass + ' ' : '';
+            var cc = i.childclass ? dot + i.childclass + ' ' : '';
+            var pe = i.parentelement ? i.parentelement + ' ' : '';
+            var el = i.element ? i.element + ' ' : '';
+            var cl = i.class ? dot + i.class + ' ' : '';
+            $scope.cssfile += pc + cc + pe + el + cl + ' {' + i.property + ': ' + i.value + i.important + ';}\r';
         });
     }
+
+
 
     $scope.gome = function() {
         $scope.visible1 = true;
@@ -183,13 +195,13 @@ Simple.app.controller("colorThemeCtrl", function($scope){
 
     $scope.goimageheader = function() {
         $scope.firstpaneisopen = false;
-        $scope.visible1 = false;
-        $scope.visible2 = false;
-        $scope.visible3 = false;
+
         $scope.visible4 = false;
         $scope.visible5 = true;
-        $scope.visible6 = false;
-        $scope.visible7 = false;
+        $scope.hidehtml= true;
+        $scope.templatefile = "";
+        format($scope.designviewdefault);
+        console.log($scope.cssfile);
         $scope.cssfile = "";
 
 
@@ -233,6 +245,7 @@ Simple.app.controller("colorThemeCtrl", function($scope){
         $scope.visible5 = false;
         $scope.visible6 = false;
         $scope.visible7 = false;
+
         $scope.templatefile = "";
         format($scope.designviewdefault);
 
