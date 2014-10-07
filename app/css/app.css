@@ -12,6 +12,72 @@ section {position: relative;}
     margin:20px 0;
 }
 
+
+
+
+
+
+
+.edit {
+    font-weight: bold;
+    color: green;
+}
+.delete {
+    font-weight: bold;
+    color: red;
+}
+label {
+    width: 50%;
+    text-align: right;
+    display: inline-block;
+}
+input, select {
+
+}
+.radio fieldset label, .checkboxes fieldset label {
+    display: block;
+    text-align: left;
+}
+.radio fieldset label input, .checkboxes fieldset label input {
+    margin-right: 5px;
+}
+h3 {
+    border-top: 2px solid #ccc;
+    margin-top: 20px;
+    padding-top: 5px;
+}
+.required label:after {
+    color: #e32;
+    content: '*';
+    display:inline;
+}
+.order {
+    color: #ccc;
+}
+fieldset {
+    border: 1px solid #eee;
+    margin: 10px;
+    padding: 0 10px;
+}
+fieldset legend {
+    margin: 10px;
+}
+fieldset label {
+    width: auto;
+}
+fieldset div {
+    margin: 10px 0;
+}
+strong {
+    font-weight: bold;
+}
+
+
+
+
+
+
+
 .ta-root {
     margin-bottom: 25px;
     margin-top: 25px;

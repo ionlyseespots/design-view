@@ -111,6 +111,7 @@ Simple.app.controller("themeEditorCtrl", function($scope){
         {
             "tag":              "div",
             "hello":            '<img src="http://www.four51.com/images/company/c5a12ff8ea8f4cb0aaf8dc662ea7085e.png"/><h2>Company Name</h2>',
+            "title":            '',
             "class":            "col-xs-12"
         }
     ];
@@ -128,7 +129,7 @@ Simple.app.controller("themeEditorCtrl", function($scope){
     $scope.designloginbackground = [
         {
             "name":             "loginbackground",
-            "parentclass":      ".login",
+            "parentclass":      "login",
             "childclass":       "order-cloud-image",
             "parentelement":    "",
             "element":          "",
@@ -149,6 +150,18 @@ Simple.app.controller("themeEditorCtrl", function($scope){
             "important":        ""
         }
     ];
+    $scope.designheaderbackground = [
+        {
+            "name":             "headerbackground",
+            "parentclass":      "jumbotron",
+            "childclass":       "",
+            "parentelement":    "",
+            "element":          "",
+            "property":         "background-image",
+            "value":            "",
+            "important":        ""
+        }
+    ];
 
     // Toggle
     $scope.showhtml = false;
@@ -163,14 +176,10 @@ Simple.app.controller("themeEditorCtrl", function($scope){
         angular.forEach(d, function(i){
            //html
             var tagopen = '<' + i.tag;
-            var t = i.tag;
             var c = i.class;
-            var pe = i.children;
-            var el = i.html;
-            var logo = i.logo;
             var designinner = i.hello;
             var tagclose = '</' + i.tag + '>';
-            $scope.templatefile += tagopen + ' class="' + c + '">' + designinner + tagclose + '\n' + ' \r';
+            $scope.templatefile += tagopen + ' class="' + c + '">' + designinner + tagclose + '\n' + '\r';
             //css
             var dot = ".";
             var pc = i.parentclass ? dot + i.parentclass + ' ' : '';
@@ -178,7 +187,7 @@ Simple.app.controller("themeEditorCtrl", function($scope){
             var pe = i.parentelement ? i.parentelement + ' ' : '';
             var el = i.element ? i.element + ' ' : '';
             var cl = i.class ? dot + i.class + ' ' : '';
-            $scope.cssfile += pc + cc + pe + el + cl + ' {' + i.property + ': ' + 'url("' + i.value + '")' + i.important + ';}\r';
+            $scope.cssfile += pc + cc + pe + el + cl + ' {' + i.property + ': ' + 'url("' + i.value + '")' + i.important + ';}' + '\r';
         });
     }
 
@@ -206,13 +215,6 @@ Simple.app.controller("themeEditorCtrl", function($scope){
         format($scope.designviewdivus);
         console.log($scope.templatefile);
     };
-    $scope.goHeaderBackground = function() {
-        $scope.hidehtml= true;
-        $scope.templatefile = "";
-        format($scope.designviewdefault);
-        console.log($scope.cssfile);
-        $scope.cssfile = "";
-    };
     $scope.goLoginBackground = function() {
         $scope.cssfile = "";
         format($scope.designloginbackground);
@@ -233,20 +235,12 @@ Simple.app.controller("themeEditorCtrl", function($scope){
         $scope.templatefile = opencontainer + $scope.templatefile + closecontainer;
         console.log($scope.templatefile);
     };
+    $scope.goHeaderBackground = function() {
+        $scope.cssfile = "";
+        format($scope.designheaderbackground);
+        $scope.cssfile = '/* custom.css */' + '\n' + '/* login background */' + '\n' + $scope.cssfile;
+        console.log($scope.cssfile);
 
-    // stuff, I want to add/subtract class names in array at some point
-    $scope.addcolumncount = function() {
 
-    };
-    $scope.subtractcolumncount = function() {
-
-    };
-    //http://stackoverflow.com/questions/20439439/on-click-how-can-i-cycle-through-json-one-by-one-in-angularjs
-    $scope.current = 0;
-    $scope.NextGo = function() {
-        $scope.current = ($scope.current + 1) % $scope.data.length;
-    };
-    $scope.PrevGo = function() {
-        $scope.current = ($scope.current - 1) % $scope.data.length;
     };
 });
