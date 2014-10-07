@@ -3,20 +3,21 @@
 </h2>
 <div class="text-center">
     <div class="well row text-center">
-        <div class="col-sm-3"><a style=" background-color:#555; padding: 25px 0; text-align: center; color:#fff;" ng-click="goHeaderDefault();">Default</a></div>
+        <div class="col-sm-3"><a style=" background-color:#555; padding: 25px 0; text-align: center; color:#fff;">Default</a></div>
         <div class="col-sm-3"><a style=" background-color:#555; padding: 25px 0; text-align: center; color:#fff;">Header 1</a></div>
         <div class="col-sm-3"><a style=" background-color:#555; padding: 25px 0; text-align: center; color:#fff;">Header 2</a></div>
         <div class="col-sm-3"><a style="background-color:#555; padding: 25px 0; text-align: center; color:#fff;">Header 3</a></div>
    </div>
 </div>
 <div>
-    <button class="btn btn-default" ng-click="goHeaderBackground();isActiveHeaderBg = !isActiveHeaderBg;" style="float: right;">Toggle Background</button>
-    <div  ng-class="{'': !isActiveHeaderBg, 'hidden': isActiveHeaderBg}"  ng-repeat="design in designviewdefault">
+    <!--<button class="btn btn-default" ng-click="goHeaderBackground();isActiveHeaderBg = !isActiveHeaderBg;" style="float: right;">Toggle Background</button>-->
+    <div ng-repeat="design in designviewdefault">
         <div ng-model="design.hello" ta-toolbar="[['h1','h2','h3','p','bold','italics','ul', 'ol','insertImage','insertLink','html','clear']]" text-angular=""></div>
     </div>
 </div>
-<button ng-class="{'': !isActiveHeaderBg, 'hidden': isActiveHeaderBg}" class="btn btn-default" ng-click="goHeaderDefault(); open();">Preview</button>
-<button ng-class="{'': !isActiveHeaderBg, 'hidden': isActiveHeaderBg}" class="btn btn-success" ng-click="goHeaderDefault()">Save Header</button>
+<button class="btn btn-default" ng-click="goHeaderDefault(); goHeaderBackground(); open();">Preview</button>
+<button class="btn btn-success" ng-click="goHeaderDefault(); goHeaderBackground(); ">Save Header</button>
+
 <!--- http://fdietz.github.io/recipes-with-angular-js/common-user-interface-patterns/displaying-a-modal-dialog.html --->
 <div modal="showModal" close="cancel()">
     <!--<div class="modal-header">-->
@@ -126,15 +127,23 @@
         <button class="btn" ng-click="cancel()">Cancel</button>
     </div>
 </div>
-<div  ng-class="{'hidden': !isActiveHeaderBg, '': isActiveHeaderBg}">
-    <!--<button class="btn btn-default" ng-click="goHeaderDefault()" style="float: right;">Toggle Background</button>-->
-    <div ng-model="design.hello" ta-toolbar="[['insertImage','clear']]" text-angular=""></div>
+        <p style="margin-top: 25px;">
+           Optional background image URL
+        </p>
+<div ng-repeat="design in designheaderbackground" style="margin-bottom: 25px;">
+    <input class="form-control" ng-model="design.value" />
 </div>
-<button ng-class="{'hidden': !isActiveHeaderBg, '': isActiveHeaderBg}" class="btn btn-success" ng-click="goHeaderBackground()">Save Header Background</button>
+<!--<div  ng-class="{'hidden': !isActiveHeaderBg, '': isActiveHeaderBg}">-->
+    <!--<button class="btn btn-default" ng-click="goHeaderDefault()" style="float: right;">Toggle Background</button>-->
+    <!--<div ng-model="design.hello" ta-toolbar="[['insertImage','clear']]" text-angular=""></div>-->
+<!--</div>-->
+<!--<button ng-class="{'hidden': !isActiveHeaderBg, '': isActiveHeaderBg}" class="btn btn-success" ng-click="goHeaderBackground()">Save Header Background</button>-->
+        <div class="clearfix">
 <button class="btn btn-primary pull-right" ng-click="showhtmlcss = !showhtmlcss;">Toggle Generated File</button>
+        </div>
 <!--<button ng-show="visible5 || visible6 || visible7" class="btn btn-primary pull-right" ng-click="showhtml = !showhtml;">Toggle Generated CSS</button>-->
 <div ng-show="showhtmlcss">
-    <div class="well" ng-class="{'': !isActiveHeaderBg, 'hidden': isActiveHeaderBg}" style="margin-top: 25px;">
+    <div class="well" style="margin-top: 25px;">
         <h1>
             Generated HTML
         </h1>
@@ -143,7 +152,7 @@
         </p>
         <code style="white-space: pre-wrap;white-space: -moz-pre-wrap !important;  white-space: -pre-wrap; white-space: -o-pre-wrap; word-wrap: break-word;">{{templatefile}}</code>
     </div>
-    <div class="well" ng-class="{'hidden': !isActiveHeaderBg, '': isActiveHeaderBg}" style="margin-top: 25px;">
+    <div class="well" style="margin-top: 25px;">
         <h1>
             Generated CSS
         </h1>
