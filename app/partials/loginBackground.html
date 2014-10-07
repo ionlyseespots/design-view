@@ -1,8 +1,10 @@
 <h2>
     Login Background
 </h2>
-<div ng-model="design.hello" ta-toolbar="[['insertImage','clear']]" text-angular=""></div>
-<button class="btn btn-success" ng-click="">Save Login Background</button>
+<div ng-repeat="design in designloginbackground">
+    <div  ng-model="design.value" ta-toolbar="[[]]" text-angular=""></div>
+</div>
+<button class="btn btn-success" ng-click="goLoginBackground()">Save Login Background</button>
 <button class="btn btn-primary pull-right" ng-click="showhtmlcss = !showhtmlcss;">Toggle Generated File</button>
 <!--<button ng-show="visible5 || visible6 || visible7" class="btn btn-primary pull-right" ng-click="showhtml = !showhtml;">Toggle Generated CSS</button>-->
 <div ng-show="showhtmlcss">

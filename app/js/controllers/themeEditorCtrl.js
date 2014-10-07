@@ -125,6 +125,27 @@ Simple.app.controller("themeEditorCtrl", function($scope){
         },
     ];
 
+    $scope.designloginbackground = [
+        {
+            "name":             "loginbackground",
+            "parentclass":      "panel-product-list",
+            "class":            "well",
+             "property":        "background-image",
+            "value":            "Enter URL",
+            "important":        ""
+        }
+    ];
+    $scope.designbodybackground = [
+        {
+            "name":             "bodybackground",
+            "parentclass":      "panel-product-list",
+            "class":            "well",
+            "property":         "background-image",
+            "value":            "Enter URL",
+            "important":        ""
+        }
+    ];
+
     // Toggle
     $scope.showhtml = false;
     $scope.showcss = false;
@@ -153,7 +174,7 @@ Simple.app.controller("themeEditorCtrl", function($scope){
             var pe = i.parentelement ? i.parentelement + ' ' : '';
             var el = i.element ? i.element + ' ' : '';
             var cl = i.class ? dot + i.class + ' ' : '';
-            $scope.cssfile += pc + cc + pe + el + cl + ' {' + i.property + ': ' + i.value + i.important + ';}\r';
+            $scope.cssfile += pc + cc + pe + el + cl + ' {' + i.property + ': ' + 'url("' + i.value + '")' + i.important + ';}\r';
         });
     }
 
@@ -190,9 +211,15 @@ Simple.app.controller("themeEditorCtrl", function($scope){
     };
     $scope.goLoginBackground = function() {
         $scope.cssfile = "";
+        format($scope.designloginbackground);
+        $scope.cssfile = '/* custom.css */' + '\n' + '/* login background */' + '\n' + $scope.cssfile;
+        console.log($scope.cssfile);
     };
     $scope.goBodyBackground = function() {
         $scope.cssfile = "";
+        format($scope.designbodybackground);
+        $scope.cssfile = '/* custom.css */' + '\n' + '/* body background */' + '\n' + $scope.cssfile;
+        console.log($scope.cssfile);
     };
     $scope.goHeaderDefault = function() {
         $scope.templatefile = "";
