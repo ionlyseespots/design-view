@@ -204,45 +204,39 @@ Simple.app.controller("themeEditorCtrl", function($scope){
         $scope.visible1 = true;
         $scope.visible2 = false;
         $scope.visible3 = false;
-        $scope.templatefile = "";
-        format($scope.designviewdiv);
+        $scope.templatefile = formatHtml($scope.designviewdiv);
         console.log($scope.templatefile);
     };
     $scope.goNewTwocol = function() {
         $scope.visible1 = false;
         $scope.visible2 = true;
         $scope.visible3 = false;
-        $scope.templatefile = "";
-        format($scope.designviewdivyou);
+        $scope.templatefile = formatHtml($scope.designviewdivyou);
         console.log($scope.templatefile);
     };
     $scope.goNewThreecol = function() {
         $scope.visible1 = false;
         $scope.visible2 = false;
-        $scope.visible3 = true;
-        $scope.templatefile = "";
-        format($scope.designviewdivus);
+        $scope.templatefile = formatHtml($scope.designviewdivus);
         console.log($scope.templatefile);
     };
-    $scope.goLoginBackground = function() {
-        $scope.cssfile = "";
-        format($scope.designloginbackground);
-        $scope.cssfile = '/* custom.css */' + '\n' + '/* login background */' + '\n' + $scope.cssfile;
+    $scope.goLoginBackground = function() {;
+        $scope.cssfile = '/* custom.css */' + '\n' + '/* login background */' + '\n' + formatCss($scope.designloginbackground);
         console.log($scope.cssfile);
     };
     $scope.goBodyBackground = function() {
-        $scope.cssfile = "";
-        format($scope.designbodybackground);
-        $scope.cssfile = '/* custom.css */' + '\n' + '/* body background */' + '\n' + $scope.cssfile;
+        $scope.cssfile = '/* custom.css */' + '\n' + '/* login background */' + '\n' + formatCss($scope.designbodybackground);
         console.log($scope.cssfile);
     };
     $scope.goHeaderDefault = function() {
         var opencontainer = '<!-- branding.html -->' + '\n' + '<section class="jumbotron container-fluid">' + '\n';
         var closecontainer = '</section>';
         $scope.templatefile = opencontainer + formatHtml($scope.designviewdefault) + closecontainer;
+        console.log($scope.templatefile);
     };
     $scope.goHeaderBackground = function() {
         $scope.cssfile = '/* custom.css */' + '\n' + '/* login background */' + '\n' + formatCss($scope.designheaderbackground);
+        console.log($scope.cssfile);
     };
 
 });
