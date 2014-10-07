@@ -1,8 +1,11 @@
 <h2>
     Body Background
 </h2>
-<div ng-repeat="design in designbodybackground">
-    <div ng-model="design.value" ta-toolbar="[[]]" text-angular=""></div>
+<p>
+    Enter URL
+</p>
+<div ng-repeat="design in designbodybackground" style="margin-bottom: 25px;">
+    <input class="form-control" ng-model="design.value" />
 </div>
 <button class="btn btn-success" ng-click="goBodyBackground()">Save Body Background</button>
 <button class="btn btn-primary pull-right" ng-click="showhtmlcss = !showhtmlcss;">Toggle Generated File</button>

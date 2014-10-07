@@ -131,7 +131,7 @@ Simple.app.controller("themeEditorCtrl", function($scope){
             "parentclass":      "panel-product-list",
             "class":            "well",
              "property":        "background-image",
-            "value":            "Enter URL",
+            "value":            "",
             "important":        ""
         }
     ];
@@ -141,7 +141,7 @@ Simple.app.controller("themeEditorCtrl", function($scope){
             "parentclass":      "panel-product-list",
             "class":            "well",
             "property":         "background-image",
-            "value":            "Enter URL",
+            "value":            "",
             "important":        ""
         }
     ];
