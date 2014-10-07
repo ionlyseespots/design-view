@@ -172,14 +172,22 @@ Simple.app.controller("themeEditorCtrl", function($scope){
 
 
     //** Format JSON to HTML
-    function format(d){
-        angular.forEach(d, function(i){
-           //html
+    function formatHtml(d) {
+        var concat = "";
+        angular.forEach(d, function (i) {
+            //html
             var tagopen = '<' + i.tag;
             var c = i.class;
             var designinner = i.hello;
             var tagclose = '</' + i.tag + '>';
-            $scope.templatefile += tagopen + ' class="' + c + '">' + designinner + tagclose + '\n' + '\r';
+            concat += tagopen + ' class="' + c + '">' + designinner + tagclose + '\n' + '\r';
+        });
+        return concat;
+    }
+
+    function formatCss(d){
+        var concat = "";
+        angular.forEach(d, function(i){
             //css
             var dot = ".";
             var pc = i.parentclass ? dot + i.parentclass + ' ' : '';
@@ -187,8 +195,9 @@ Simple.app.controller("themeEditorCtrl", function($scope){
             var pe = i.parentelement ? i.parentelement + ' ' : '';
             var el = i.element ? i.element + ' ' : '';
             var cl = i.class ? dot + i.class + ' ' : '';
-            $scope.cssfile += pc + cc + pe + el + cl + ' {' + i.property + ': ' + 'url("' + i.value + '")' + i.important + ';}' + '\r';
+            concat += pc + cc + pe + el + cl + ' {' + i.property + ': ' + 'url("' + i.value + '")' + i.important + ';}' + '\r';
         });
+        return concat;
     }
 
     $scope.goNewCustom = function() {
@@ -228,19 +237,12 @@ Simple.app.controller("themeEditorCtrl", function($scope){
         console.log($scope.cssfile);
     };
     $scope.goHeaderDefault = function() {
-        $scope.templatefile = "";
-        format($scope.designviewdefault);
         var opencontainer = '<!-- branding.html -->' + '\n' + '<section class="jumbotron container-fluid">' + '\n';
         var closecontainer = '</section>';
-        $scope.templatefile = opencontainer + $scope.templatefile + closecontainer;
-        console.log($scope.templatefile);
+        $scope.templatefile = opencontainer + formatHtml($scope.designviewdefault) + closecontainer;
     };
     $scope.goHeaderBackground = function() {
-        $scope.cssfile = "";
-        format($scope.designheaderbackground);
-        $scope.cssfile = '/* custom.css */' + '\n' + '/* login background */' + '\n' + $scope.cssfile;
-        console.log($scope.cssfile);
-
-
+        $scope.cssfile = '/* custom.css */' + '\n' + '/* login background */' + '\n' + formatCss($scope.designheaderbackground);
     };
+
 });
