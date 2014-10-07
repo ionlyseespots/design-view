@@ -217,6 +217,7 @@ Simple.app.controller("themeEditorCtrl", function($scope){
     $scope.goNewThreecol = function() {
         $scope.visible1 = false;
         $scope.visible2 = false;
+        $scope.visible3 = true;
         $scope.templatefile = formatHtml($scope.designviewdivus);
         console.log($scope.templatefile);
     };
