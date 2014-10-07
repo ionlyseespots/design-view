@@ -1,4 +1,4 @@
-Simple.app.controller("colorThemeCtrl", function($scope){
+Simple.app.controller("themeEditorCtrl", function($scope){
     $scope.visible1 = false;
     $scope.visible2 = false;
     $scope.visible3 = false;
