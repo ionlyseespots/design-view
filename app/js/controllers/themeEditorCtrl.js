@@ -128,18 +128,22 @@ Simple.app.controller("themeEditorCtrl", function($scope){
     $scope.designloginbackground = [
         {
             "name":             "loginbackground",
-            "parentclass":      "panel-product-list",
-            "class":            "well",
-             "property":        "background-image",
+            "parentclass":      ".login",
+            "childclass":       "order-cloud-image",
+            "parentelement":    "",
+            "element":          "",
+            "property":         "background-image",
             "value":            "",
-            "important":        ""
+            "important":        " !important"
         }
     ];
     $scope.designbodybackground = [
         {
             "name":             "bodybackground",
-            "parentclass":      "panel-product-list",
-            "class":            "well",
+            "parentclass":      "",
+            "childclass":       "",
+            "parentelement":    "body",
+            "element":          "",
             "property":         "background-image",
             "value":            "",
             "important":        ""
