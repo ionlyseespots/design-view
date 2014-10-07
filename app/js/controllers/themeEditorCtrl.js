@@ -1,7 +1,4 @@
 Simple.app.controller("themeEditorCtrl", function($scope){
-    $scope.visible1 = false;
-    $scope.visible2 = false;
-    $scope.visible3 = false;
     //== Data
     $scope.designviewdiv = [
         {
@@ -128,14 +125,15 @@ Simple.app.controller("themeEditorCtrl", function($scope){
         },
     ];
 
+    // TextAngular
     $scope.content = '';
-    $scope.headerpane = true;
-    $scope.visible4 = true;
+
+    // Toggle
     $scope.showhtml = false;
     $scope.showcss = false;
-
-
-
+    $scope.visible1 = false;
+    $scope.visible2 = false;
+    $scope.visible3 = false;
 
 
     //** Format JSON to HTML
@@ -162,111 +160,53 @@ Simple.app.controller("themeEditorCtrl", function($scope){
         });
     }
 
-
-
-    $scope.gome = function() {
+    $scope.goNewCustom = function() {
         $scope.visible1 = true;
         $scope.visible2 = false;
         $scope.visible3 = false;
-        $scope.visible4 = false;
         $scope.templatefile = "";
         format($scope.designviewdiv);
         console.log($scope.templatefile);
-
     };
-    $scope.goyou = function() {
+    $scope.goNewTwocol = function() {
         $scope.visible1 = false;
         $scope.visible2 = true;
         $scope.visible3 = false;
-        $scope.visible4 = false;
         $scope.templatefile = "";
         format($scope.designviewdivyou);
         console.log($scope.templatefile);
     };
-    $scope.gous = function() {
+    $scope.goNewThreecol = function() {
         $scope.visible1 = false;
         $scope.visible2 = false;
         $scope.visible3 = true;
-        $scope.visible4 = false;
         $scope.templatefile = "";
         format($scope.designviewdivus);
         console.log($scope.templatefile);
     };
-
-    $scope.goimageheader = function() {
-        $scope.firstpaneisopen = false;
-
-        $scope.visible4 = false;
-        $scope.visible5 = true;
+    $scope.goHeaderBackground = function() {
         $scope.hidehtml= true;
         $scope.templatefile = "";
         format($scope.designviewdefault);
         console.log($scope.cssfile);
         $scope.cssfile = "";
-
-
     };
-
-    $scope.goimagelogin = function() {
-        $scope.firstpaneisopen = false;
-        $scope.headerpane = false;
-        $scope.visible1 = false;
-        $scope.visible2 = false;
-        $scope.visible3 = false;
-        $scope.visible4 = false;
-        $scope.visible5 = false;
-        $scope.visible6 = true;
-        $scope.visible7 = false;
+    $scope.goLoginBackground = function() {
         $scope.cssfile = "";
-
-
     };
-    $scope.goimagebody = function() {
-        $scope.firstpaneisopen = false;
-        $scope.headerpane = false;
-        $scope.visible1 = false;
-        $scope.visible2 = false;
-        $scope.visible3 = false;
-        $scope.visible4 = false;
-        $scope.visible5 = false;
-        $scope.visible6 = false;
-        $scope.visible7 = true;
+    $scope.goBodyBackground = function() {
         $scope.cssfile = "";
-
-
     };
-    $scope.gothem = function() {
-        $scope.firstpaneisopen = false;
-        $scope.headerpane = true;
-        $scope.visible1 = false;
-        $scope.visible2 = false;
-        $scope.visible3 = false;
-        $scope.visible4 = true;
-        $scope.visible5 = false;
-        $scope.visible6 = false;
-        $scope.visible7 = false;
-
+    $scope.goHeaderDefault = function() {
         $scope.templatefile = "";
         format($scope.designviewdefault);
-
         var opencontainer = '<!-- branding.html -->' + '\n' + '<section class="jumbotron container-fluid">' + '\n';
         var closecontainer = '</section>';
-
         $scope.templatefile = opencontainer + $scope.templatefile + closecontainer;
-
         console.log($scope.templatefile);
     };
 
-    $scope.goclear = function() {
-        $scope.visible1 = false;
-        $scope.visible2 = false;
-        $scope.visible3 = false;
-        $scope.visible4 = false;
-        $scope.visible5 = false;
-        $scope.visible6 = false;
-        $scope.visible7 = false;
-    };
-    // stuff, I want to add/subract class names in array at some point
+    // stuff, I want to add/subtract class names in array at some point
     $scope.addcolumncount = function() {
 
     };
