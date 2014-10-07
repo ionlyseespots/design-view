@@ -110,7 +110,7 @@ Simple.app.controller("themeEditorCtrl", function($scope){
     $scope.designviewdefault = [
         {
             "tag":              "div",
-            "hello":            '<img ng-bind-html src="http://www.four51.com/images/company/c5a12ff8ea8f4cb0aaf8dc662ea7085e.png"/><h2>Company Name</h2>',
+            "hello":            '<img src="http://www.four51.com/images/company/c5a12ff8ea8f4cb0aaf8dc662ea7085e.png"/><h2>Company Name</h2>',
             "class":            "col-xs-12"
         }
     ];
@@ -124,9 +124,6 @@ Simple.app.controller("themeEditorCtrl", function($scope){
             "class":            "col-sm-6"
         },
     ];
-
-    // TextAngular
-    $scope.content = '';
 
     // Toggle
     $scope.showhtml = false;
