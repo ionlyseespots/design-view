@@ -1,5 +1,17 @@
 Simple.app.controller("themeEditorCtrl", function($scope){
     //== Data
+    $scope.designviewambient = [
+        {
+            "tag":              "div",
+            "class":            "col-xs-12",
+            "hello":            "1-column",
+            "children": [
+                {
+                    "tag":          "span",
+                    "html":         "prexisitingText: {newText}"
+                }
+            ]}
+    ];
     $scope.designviewdiv = [
         {
             "tag":              "div",
@@ -200,10 +212,19 @@ Simple.app.controller("themeEditorCtrl", function($scope){
         return concat;
     }
 
+    $scope.goNewAmbient = function() {
+        $scope.visible1 = false;
+        $scope.visible2 = false;
+        $scope.visible3 = false;
+        $scope.visible4 = true;
+        $scope.templatefile = formatHtml($scope.designviewambient);
+        console.log($scope.templatefile);
+    };
     $scope.goNewCustom = function() {
         $scope.visible1 = true;
         $scope.visible2 = false;
         $scope.visible3 = false;
+        $scope.visible4 = false;
         $scope.templatefile = formatHtml($scope.designviewdiv);
         console.log($scope.templatefile);
     };
@@ -211,6 +232,7 @@ Simple.app.controller("themeEditorCtrl", function($scope){
         $scope.visible1 = false;
         $scope.visible2 = true;
         $scope.visible3 = false;
+        $scope.visible4 = false;
         $scope.templatefile = formatHtml($scope.designviewdivyou);
         console.log($scope.templatefile);
     };
@@ -218,6 +240,7 @@ Simple.app.controller("themeEditorCtrl", function($scope){
         $scope.visible1 = false;
         $scope.visible2 = false;
         $scope.visible3 = true;
+        $scope.visible4 = false;
         $scope.templatefile = formatHtml($scope.designviewdivus);
         console.log($scope.templatefile);
     };

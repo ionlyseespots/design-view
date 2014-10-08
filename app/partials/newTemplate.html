@@ -3,8 +3,9 @@
 </h2>
 <div style="margin-bottom: 25px;">
     <button class="btn btn-default" ng-click="goNewCustom()">Custom</button>
-    <button class="btn btn-default" ng-click="goNewTwocol()">2-column</button>
-    <button class="btn btn-default" ng-click="goNewThreecol()">3-column</button>
+    <button class="btn btn-default" ng-click="goNewTwocol()">Bootstrap 2-column</button>
+    <button class="btn btn-default" ng-click="goNewThreecol()">Bootstrap 3-column</button>
+    <button class="btn btn-default" ng-click="goNewAmbient()">Ambient Design Pattern</button>
 </div>
 <div ng-show="visible1" ng-repeat="design in designviewdiv">
     <div ng-model="design.hello" ta-toolbar="[['h1','h2','h3','p','bold','italics','ul', 'ol','insertImage','insertLink','html','clear']]" text-angular=""></div>
@@ -24,12 +25,18 @@
         </tab>
     </tabset>
 </div>
+<div ng-show="visible4" ng-repeat="design in designviewambient">
+            <div ng-model="design.hello" ta-toolbar="[['h1','h2','h3','p','bold','italics','ul', 'ol','insertImage','insertLink','html','clear']]" text-angular=""></div>
+    </tabset>
+</div>
 <button ng-show="visible1" class="btn btn-default" ng-click="goNewCustom(); open();">Preview</button>
 <button ng-show="visible1" class="btn btn-success" ng-click="goNewCustom(); ">Save New File</button>
 <button ng-show="visible2" class="btn btn-default" ng-click="goNewTwocol(); open();">Preview</button>
 <button ng-show="visible2" class="btn btn-success" ng-click="goNewTwocol()">Save New File</button>
 <button ng-show="visible3" class="btn btn-default" ng-click="goNewThreecol(); open();">Preview</button>
 <button ng-show="visible3" class="btn btn-success" ng-click="goNewThreecol()">Save New File</button>
+<button ng-show="visible4" class="btn btn-default" ng-click="goNewThreecol(); open();">Preview</button>
+<button ng-show="visible4" class="btn btn-success" ng-click="goNewAmbient()">Save New File</button>
 <!--- http://fdietz.github.io/recipes-with-angular-js/common-user-interface-patterns/displaying-a-modal-dialog.html --->
 <div modal="showModal" close="cancel()">
     <!--<div class="modal-header">-->
@@ -139,12 +146,7 @@
         <button class="btn" ng-click="cancel()">Cancel</button>
     </div>
 </div>
-<div  ng-class="{'hidden': !isActiveHeaderBg, '': isActiveHeaderBg}">
-    <!--<button class="btn btn-default" ng-click="goHeaderDefault()" style="float: right;">Toggle Background</button>-->
-    <div ng-model="design.hello" ta-toolbar="[['insertImage','clear']]" text-angular=""></div>
-</div>
-<button ng-class="{'hidden': !isActiveHeaderBg, '': isActiveHeaderBg}" class="btn btn-success" ng-click="goHeaderBackground()">Save Header Background</button>
-<button  ng-show="visible1 || visible2 || visible3" class="btn btn-primary pull-right" ng-click="showhtmlcss = !showhtmlcss;">Toggle Generated File</button>
+<button  ng-show="visible1 || visible2 || visible3 || visible4" class="btn btn-primary pull-right" ng-click="showhtmlcss = !showhtmlcss;">Toggle Generated File</button>
 <!--<button ng-show="visible5 || visible6 || visible7" class="btn btn-primary pull-right" ng-click="showhtml = !showhtml;">Toggle Generated CSS</button>-->
 <div ng-show="showhtmlcss">
     <div class="well" ng-class="{'': !isActiveHeaderBg, 'hidden': isActiveHeaderBg}" style="margin-top: 25px;">
@@ -152,17 +154,17 @@
             Generated HTML
         </h1>
         <p class="alert-info alert text-center">
-            File Override
+            Code Snippet
         </p>
         <code style="white-space: pre-wrap;white-space: -moz-pre-wrap !important;  white-space: -pre-wrap; white-space: -o-pre-wrap; word-wrap: break-word;">{{templatefile}}</code>
     </div>
-    <div class="well" ng-class="{'hidden': !isActiveHeaderBg, '': isActiveHeaderBg}" style="margin-top: 25px;">
-        <h1>
-            Generated CSS
-        </h1>
-        <p class="alert-info alert text-center">
-            File Override
-        </p>
-        <code style="white-space: pre-wrap;white-space: -moz-pre-wrap !important;  white-space: -pre-wrap; white-space: -o-pre-wrap; word-wrap: break-word;">{{cssfile}}</code>
-    </div>
+    <!--<div class="well" style="margin-top: 25px;">-->
+        <!--<h1>-->
+            <!--Generated CSS-->
+        <!--</h1>-->
+        <!--<p class="alert-info alert text-center">-->
+            <!--Code Snippet-->
+        <!--</p>-->
+        <!--<code style="white-space: pre-wrap;white-space: -moz-pre-wrap !important;  white-space: -pre-wrap; white-space: -o-pre-wrap; word-wrap: break-word;">{{cssfile}}</code>-->
+    <!--</div>-->
 </div>
